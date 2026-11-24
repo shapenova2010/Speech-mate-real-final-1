@@ -143,22 +143,6 @@
     .breadcrumb { font-size: 13px; color: var(--muted); }
     .breadcrumb span { margin: 0 6px; color: #b3bac8; }
     .top-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-    .top-pill-btn {
-      border: 1px solid var(--line);
-      background: #fff;
-      color: var(--ink);
-      border-radius: 99px;
-      padding: 6px 12px;
-      font: inherit;
-      font-size: 12px;
-      font-weight: 700;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: .15s;
-    }
-    .top-pill-btn:hover { border-color: var(--accent); color: var(--accent); }
     .lang-switcher {
       display: inline-flex;
       background: #fff;
@@ -374,19 +358,6 @@
     @keyframes pulseRec { 0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,.4); } 50% { box-shadow: 0 0 0 8px rgba(220,38,38,0); } }
     .record-button .mic { color: #ff7c8a; }
     .record-button.recording .mic { color: #fff; }
-    .audio-playback {
-      width: 100%;
-      background: #f8f9fc;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 12px 14px;
-      margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .audio-playback audio { height: 36px; flex: 1; min-width: 200px; }
     .transcript-wrap { margin-top: 6px; }
     .label-row { display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; margin-bottom: 7px; }
     .text-button { border: 0; background: none; color: var(--accent); cursor: pointer; font: inherit; font-weight: 700; font-size: 12px; }
@@ -459,29 +430,22 @@
     .exercise-controls { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
     .exercise-note { margin-top: 18px; padding: 15px 18px; border-radius: 15px; background: #fff8e8; border: 1px solid #f1dfad; color: #695827; font-size: 12.5px; line-height: 1.55; }
 
-    /* Video Lessons (Permanent URL + Cover Image) */
+    /* Video Lessons */
     .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .video-card { overflow: hidden; display: flex; flex-direction: column; }
     .video-media-box {
-      height: 195px; background: linear-gradient(135deg, #171f35, #2c385e); color: #fff;
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
-      padding: 16px; text-align: center; position: relative; overflow: hidden;
+      height: 195px; background: #000; color: #fff;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
     }
-    .video-media-box video, .video-media-box iframe, .video-media-box img {
-      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: 0; background: #000;
+    .video-media-box iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #000;
     }
-    .play-overlay {
-      position: absolute; inset: 0; background: rgba(0,0,0,0.35); display: grid; place-items: center; cursor: pointer; z-index: 5;
-    }
-    .play-circle { width: 52px; height: 52px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-size: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
     .video-body { padding: 20px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
-    .media-config-box { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line); display: grid; gap: 8px; }
-    .media-config-box input { padding: 8px 10px; font-size: 12px; width: 100%; }
 
     /* Mistakes */
     .mistakes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
     .mistake-card { padding: 20px; }
-    .mistake-count { font-size: 24px; font-weight: 800; color: var(--accent); }
 
     /* Progress */
     .progress-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 14px; }
@@ -494,7 +458,7 @@
     .history-item { padding: 14px 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
     .history-item:last-child { border-bottom: 0; }
 
-    /* About & Timeline & Permanent Photo Slots */
+    /* About & Timeline & Photo Slots */
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .about-grid .card { padding: 24px; }
     .about-grid p { color: var(--muted); line-height: 1.65; font-size: 13.5px; }
@@ -504,8 +468,6 @@
       border: 1px solid #dcd8ff;
       display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
     }
-    .hypothesis { padding: 26px; margin-top: 14px; }
-    .hypothesis blockquote { font-size: 18px; line-height: 1.55; margin: 14px 0 0; font-weight: 650; }
     .timeline { position: relative; padding-left: 28px; display: grid; gap: 16px; margin-top: 16px; }
     .timeline:before { content: ""; position: absolute; left: 9px; top: 6px; bottom: 6px; width: 2px; background: #dcd8ff; }
     .timeline-item { position: relative; padding: 20px; }
@@ -513,62 +475,12 @@
     .photo-slots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 16px; }
     .photo-card { padding: 18px; display: flex; flex-direction: column; justify-content: space-between; }
     .photo-preview {
-      border: 2px dashed #cfd6e6; border-radius: 16px; height: 220px;
+      border: 2px dashed #cfd6e6; border-radius: 16px; height: 260px;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
       text-align: center; padding: 16px; color: var(--muted); background: #fafbfe; gap: 8px;
       position: relative; overflow: hidden; margin-bottom: 12px;
     }
     .photo-preview img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-
-    /* QR Modal */
-    .modal-backdrop {
-      position: fixed; inset: 0; background: rgba(16, 24, 43, 0.6); backdrop-filter: blur(3px);
-      display: none; align-items: center; justify-content: center; z-index: 120; padding: 16px;
-    }
-    .modal-backdrop.open { display: flex; }
-    .modal-box {
-      background: #fff; border-radius: 24px; max-width: 420px; width: 100%; padding: 26px;
-      box-shadow: 0 24px 60px rgba(0,0,0,.22); text-align: center;
-    }
-    .qr-frame {
-      width: 210px; height: 210px; margin: 16px auto; padding: 12px;
-      border: 1px solid var(--line); border-radius: 18px; background: #fff;
-      display: grid; place-items: center;
-    }
-    .qr-frame img { width: 100%; height: 100%; object-fit: contain; }
-    /* Дискретное мелкое редактирование QR и ссылки, незаметное для жюри */
-    .qr-stealth-bar {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      margin-bottom: 8px;
-      opacity: 0.45;
-      transition: opacity .2s;
-    }
-    .qr-stealth-bar:hover, .qr-stealth-bar:focus-within { opacity: 0.9; }
-    .qr-stealth-input {
-      flex: 1;
-      font-size: 9.5px !important;
-      padding: 4px 8px !important;
-      border-radius: 8px !important;
-      color: #8a94a6 !important;
-      border: 1px solid #eef1f6 !important;
-      background: #fafbfe !important;
-      height: 24px;
-    }
-    .qr-stealth-btn {
-      border: 1px solid #eef1f6;
-      background: #fafbfe;
-      color: #8a94a6;
-      font-size: 9.5px;
-      padding: 3px 7px;
-      border-radius: 7px;
-      cursor: pointer;
-      white-space: nowrap;
-      line-height: 1.2;
-    }
-    .qr-stealth-btn:hover { color: var(--ink); border-color: #d6dce8; }
 
     /* Toast */
     .toast {
@@ -647,7 +559,6 @@
           <div class="breadcrumb">SpeechMate KZ <span>/</span> <span id="pageName">Главная</span></div>
         </div>
         <div class="top-actions">
-          <button class="top-pill-btn" id="openQrModalBtn">📱 QR / Ссылка</button>
           <div class="lang-switcher">
             <button class="lang-btn active" data-lang="ru">RU</button>
             <button class="lang-btn" data-lang="kk">KZ</button>
@@ -665,7 +576,7 @@
           <div>
             <div class="eyebrow" data-i18n="hero_eyebrow">КАЗАХСТАНСКИЙ ИССЛЕДОВАТЕЛЬСКИЙ ПРОЕКТ · AI SPEECH TRAINER</div>
             <h1 data-i18n="hero_title">Говори увереннее.<br><em>Развивай свою речь.</em></h1>
-            <p class="hero-text" data-i18n="hero_subtitle">Короткие голосовые тренировки с распознаванием речи в текст (Speech-to-Text) и AI-обратной связью помогают развивать связность мыслей, словарный запас и аргументацию.</p>
+            <p class="hero-text" data-i18n="hero_subtitle">Короткие голосовые тренировки с распознаванием речи в текст (Speech-to-Text) и строгой AI-обратной связью помогают развивать связность мыслей, словарный запас и аргументацию.</p>
             <div class="hero-actions">
               <button class="primary" data-go="practice" data-i18n="btn_start_train">Начать тренировку →</button>
               <button class="secondary" data-go="conversation" data-i18n="btn_try_chat">Попробовать AI-диалог</button>
@@ -675,7 +586,7 @@
             <div class="orb"><span>AI</span></div>
             <div class="hero-card-text">
               <strong>AI Coach · Speech-to-Text</strong>
-              <span data-i18n="hero_orb_desc">Голос → распознавание в текст → AI-анализ → прогресс</span>
+              <span data-i18n="hero_orb_desc">Голос → распознавание в текст → строгий AI-анализ → прогресс</span>
             </div>
           </div>
         </div>
@@ -728,13 +639,13 @@
           <div><span class="section-kicker">TRAINING MODES</span><h2 data-i18n="sec_modes">Основные направления</h2></div>
         </div>
         <div class="mode-grid">
-          <button class="mode-card card" data-go="practice"><span class="mode-icon">🎤</span><div><strong data-i18n="nav_practice">Голосовая тренировка</strong><p data-i18n="mode_practice_desc">Запись речи, распознавание в шрифт и AI-анализ.</p></div><span>→</span></button>
+          <button class="mode-card card" data-go="practice"><span class="mode-icon">🎤</span><div><strong data-i18n="nav_practice">Голосовая тренировка</strong><p data-i18n="mode_practice_desc">Запись речи, распознавание в шрифт и строгий AI-анализ.</p></div><span>→</span></button>
           <button class="mode-card card" data-go="mistakes"><span class="mode-icon">🛠</span><div><strong data-i18n="nav_mistakes">Работа над ошибками</strong><p data-i18n="mode_mistakes_desc">Разбор твоих реальных речевых привычек и повторов.</p></div><span>→</span></button>
-          <button class="mode-card card" data-go="debates"><span class="mode-icon">⚖️</span><div><strong data-i18n="nav_debates">Дебаты</strong><p data-i18n="mode_debates_desc">Аргументация, примеры и ответы на контраргументы AI.</p></div><span>→</span></button>
+          <button class="mode-card card" data-go="debates"><span class="mode-icon">⚖️</span><div><strong data-i18n="nav_debates">Дебаты</strong><p data-i18n="mode_debates_desc">Объективная аргументация и ответы на контраргументы AI.</p></div><span>→</span></button>
           <button class="mode-card card" data-go="word"><span class="mode-icon">📖</span><div><strong data-i18n="nav_word">Слово дня</strong><p data-i18n="mode_word_desc">Новые слова, значения, синонимы и практика в речи.</p></div><span>→</span></button>
           <button class="mode-card card" data-go="explain"><span class="mode-icon">💡</span><div><strong data-i18n="nav_explain">Объясни своими словами</strong><p data-i18n="mode_explain_desc">Учись объяснять сложные понятия просто и понятно.</p></div><span>→</span></button>
           <button class="mode-card card" data-go="speech-exercises"><span class="mode-icon">🗣️</span><div><strong data-i18n="nav_exercises">Речевые упражнения</strong><p data-i18n="mode_ex_desc">Скороговорки, дикция, интонация, темп и паузы.</p></div><span>→</span></button>
-          <button class="mode-card card" data-go="videos"><span class="mode-icon">🎬</span><div><strong data-i18n="nav_videos">Мини-видеоуроки</strong><p data-i18n="mode_video_desc">Короткие видеоуроки со ссылками и обложками.</p></div><span>→</span></button>
+          <button class="mode-card card" data-go="videos"><span class="mode-icon">🎬</span><div><strong data-i18n="nav_videos">Мини-видеоуроки</strong><p data-i18n="mode_video_desc">Практические видеоуроки по технике речи.</p></div><span>→</span></button>
           <button class="mode-card card" data-go="conversation"><span class="mode-icon">🤖</span><div><strong data-i18n="nav_chat">AI-диалог</strong><p data-i18n="mode_chat_desc">Живой диалог с AI-тренером с учётом контекста.</p></div><span>→</span></button>
           <button class="mode-card card" data-go="progress"><span class="mode-icon">📈</span><div><strong data-i18n="nav_progress">Прогресс (До / После)</strong><p data-i18n="mode_prog_desc">История тренировок, динамика «До и После» и навыки.</p></div><span>→</span></button>
         </div>
@@ -745,7 +656,7 @@
         <div class="page-header">
           <span class="section-kicker">PROFILE</span>
           <h1 data-i18n="prof_title">Профиль ученика</h1>
-          <p data-i18n="prof_sub">Личные данные и персональные настройки обучения (без сохранения почты и номеров телефонов).</p>
+          <p data-i18n="prof_sub">Личные данные и персональные настройки обучения.</p>
         </div>
         <div class="form-card card">
           <div class="form-grid">
@@ -771,7 +682,7 @@
         <div class="page-header">
           <span class="section-kicker">LEARNING PROGRAMS</span>
           <h1 data-i18n="course_title">Мой курс</h1>
-          <p data-i18n="course_sub">Выбери программу обучения. Задания чередуются по дням, чтобы тренировка оставалась разнообразной.</p>
+          <p data-i18n="course_sub">Выбери программу обучения. Задания чередуются по дням.</p>
         </div>
         <div class="courses-grid" id="coursesGrid"></div>
         <div class="card course-schedule">
@@ -795,12 +706,12 @@
         </div>
       </section>
 
-      <!-- 4. ГОЛОСОВАЯ ТРЕНИРОВКА (ИСПРАВЛЕННЫЙ SPEECH-TO-TEXT) -->
+      <!-- 4. ГОЛОСОВАЯ ТРЕНИРОВКА -->
       <section class="page" id="page-practice">
         <div class="page-header">
           <span class="section-kicker">VOICE PRACTICE</span>
           <h1 data-i18n="prac_title">Голосовая тренировка</h1>
-          <p data-i18n="prac_sub">Нажми «Начать запись» и говори в микрофон — речь мгновенно преобразуется в текст и анализируется AI.</p>
+          <p data-i18n="prac_sub">Нажми «Начать запись» и говори в микрофон — речь преобразуется в текст и строго оценивается AI по фактам.</p>
         </div>
         <div class="practice-layout">
           <div class="card prompt-card">
@@ -811,7 +722,7 @@
                 <span id="timer">00:00</span>
               </div>
             </div>
-            <h2 id="promptTitle">Расскажи о своём любимом занятии и объясни, почему оно тебе нравится.</h2>
+            <h2 id="promptTitle">Расскажи о своём любимом занятии и объясни фактами, почему оно тебе полезно.</h2>
             <p id="promptHint" class="muted" data-i18n="prac_hint">Постарайся дать развёрнутый ответ: назови главную мысль, приведи конкретный пример и сделай вывод.</p>
 
             <div class="record-area">
@@ -825,22 +736,22 @@
 
             <div class="transcript-wrap">
               <div class="label-row">
-                <span data-i18n="lbl_transcript">Распознанная речь (шрифт / текст — можно отредактировать)</span>
+                <span data-i18n="lbl_transcript">Распознанная речь (текст — можно отредактировать)</span>
                 <button id="clearTranscript" class="text-button" data-i18n="btn_clear">Очистить</button>
               </div>
-              <textarea id="transcript" data-i18n-ph="ph_transcript" placeholder="Здесь в реальном времени появится распознанный текст твоей речи. Ты также можешь дополнить его вручную."></textarea>
+              <textarea id="transcript" data-i18n-ph="ph_transcript" placeholder="Здесь появится распознанный текст твоей речи. Ты можешь дополнить его вручную."></textarea>
             </div>
-            <button class="primary wide" id="analyzeButton" data-i18n="btn_analyze">Отправить на AI-анализ →</button>
+            <button class="primary wide" id="analyzeButton" data-i18n="btn_analyze">Отправить на объективный AI-анализ →</button>
           </div>
 
           <div class="card tips-card">
             <span class="section-kicker">GUIDE</span>
-            <h3 data-i18n="prac_guide_title">Как получить точный разбор</h3>
+            <h3 data-i18n="prac_guide_title">Как получить высокий балл</h3>
             <ul>
               <li data-i18n="prac_tip_1">Говори чётко и естественно, не торопись.</li>
               <li data-i18n="prac_tip_2">Используй структуру: <b>Тезис → Причина → Пример → Вывод</b>.</li>
-              <li data-i18n="prac_tip_3">Избегай частых слов-паразитов («типа», «короче», «ну»).</li>
-              <li data-i18n="prac_tip_4">Speech-to-Text работает прямо в браузере без задержек.</li>
+              <li data-i18n="prac_tip_3">Избегай слов-паразитов («типа», «короче», «ну»).</li>
+              <li data-i18n="prac_tip_4">AI оценивает ответы строго по фактам и содержанию.</li>
             </ul>
           </div>
         </div>
@@ -849,14 +760,14 @@
           <div class="analysis-head">
             <div>
               <span class="section-kicker">SPEECH ANALYSIS</span>
-              <h2 data-i18n="an_result_title">Результат анализа ответа</h2>
+              <h2 data-i18n="an_result_title">Результат объективного анализа</h2>
             </div>
-            <span id="analysisMode" class="demo-badge" data-i18n="an_mode_badge">АНАЛИЗ РЕЧИ</span>
+            <span id="analysisMode" class="demo-badge" data-i18n="an_mode_badge">СТРОГИЙ AI-АНАЛИЗ</span>
           </div>
 
           <div class="total-score-box">
             <div>
-              <span class="muted" data-i18n="an_total_lbl">Общий балл по оценочным критериям</span>
+              <span class="muted" data-i18n="an_total_lbl">Общий балл по строгим критериям</span>
               <div style="font-size:13px;color:var(--muted);margin-top:2px" id="scoreBreakdownNote"></div>
             </div>
             <strong id="totalScoreDisplay">0 / 100</strong>
@@ -885,7 +796,7 @@
         <div class="page-header">
           <span class="section-kicker">ERROR WORKOUT</span>
           <h1 data-i18n="mis_title">Работа над ошибками</h1>
-          <p data-i18n="mis_sub">Здесь собираются выявленные особенности из твоих ответов и упражнения для их исправления.</p>
+          <p data-i18n="mis_sub">Здесь собираются выявленные особенности из твоих ответов.</p>
         </div>
         <div id="mistakesContainer"></div>
       </section>
@@ -895,7 +806,7 @@
         <div class="page-header">
           <span class="section-kicker">ARGUMENTATION · DEBATES</span>
           <h1 data-i18n="deb_title">Дебаты с AI</h1>
-          <p data-i18n="deb_sub">Надиктуй позицию голосом (Speech-to-Text) — AI ответит контраргументом и разберёт аргументацию.</p>
+          <p data-i18n="deb_sub">Надиктуй позицию голосом — AI ответит строгим контраргументом и объективно разберёт аргументацию.</p>
         </div>
         <div class="practice-layout">
           <div class="card prompt-card">
@@ -914,10 +825,10 @@
             <p id="debatePrompt" style="font-weight:600;color:var(--ink)"></p>
             <div class="record-area">
               <button id="debateRecord" class="record-button"><span class="mic">●</span><span id="debateRecordText" data-i18n="btn_dictate">Надиктовать ответ (Speech-to-Text)</span></button>
-              <small id="debateSpeechStatus" data-i18n="deb_mic_hint">Говори в микрофон — речь автоматически превратится в текст.</small>
+              <small id="debateSpeechStatus" data-i18n="deb_mic_hint">Говори в микрофон — речь превратится в текст.</small>
             </div>
-            <textarea id="debateInput" data-i18n-ph="ph_debate" placeholder="Здесь появится распознанная речь или введи аргумент вручную…"></textarea>
-            <button class="primary wide" id="debateSend" data-i18n="btn_send_debate">Отправить аргумент на AI-анализ →</button>
+            <textarea id="debateInput" data-i18n-ph="ph_debate" placeholder="Введи или надиктуй аргумент…"></textarea>
+            <button class="primary wide" id="debateSend" data-i18n="btn_send_debate">Отправить аргумент на строгий анализ →</button>
             <div id="debateFeedback" class="analysis-panel hidden"></div>
           </div>
           <div class="card tips-card">
@@ -925,7 +836,7 @@
             <h3 data-i18n="deb_guide_title">Как побеждать в споре</h3>
             <ul>
               <li data-i18n="deb_tip_1">Отвечай прямо на приведённый контраргумент AI.</li>
-              <li data-i18n="deb_tip_2">Используй логические связки для перехода от тезиса к доказательству.</li>
+              <li data-i18n="deb_tip_2">Используй логические связки и фактические доводы.</li>
               <li data-i18n="deb_tip_3">Примеры из жизни убедительнее общих фраз.</li>
             </ul>
           </div>
@@ -937,7 +848,7 @@
         <div class="page-header">
           <span class="section-kicker">VOCABULARY</span>
           <h1 data-i18n="word_page_title">Слово дня</h1>
-          <p data-i18n="word_page_sub">Изучай новые слова, произнеси предложение вслух (речь переведется в текст) и получи AI-разбор.</p>
+          <p data-i18n="word_page_sub">Изучай новые слова и применяй их в речи для строгого AI-разбора.</p>
         </div>
         <div class="word-layout">
           <div class="card word-card">
@@ -964,8 +875,8 @@
               <button id="wordRecord" class="record-button"><span class="mic">●</span><span id="wordRecordText" data-i18n="btn_dictate_word">Надиктовать предложение (голос → текст)</span></button>
               <small id="wordSpeechStatus" data-i18n="word_mic_hint">Произнеси вслух или напиши ниже.</small>
             </div>
-            <textarea id="wordInput" data-i18n-ph="ph_word" placeholder="Здесь появится распознанная речь или напиши предложение…"></textarea>
-            <button class="primary wide" id="wordCheck" data-i18n="btn_check_word">Проверить предложение и получить AI-анализ →</button>
+            <textarea id="wordInput" data-i18n-ph="ph_word" placeholder="Напиши предложение со словом…"></textarea>
+            <button class="primary wide" id="wordCheck" data-i18n="btn_check_word">Проверить предложение и получить строгий анализ →</button>
             <div id="wordFeedback" class="analysis-panel hidden"></div>
           </div>
           <div class="card tips-card">
@@ -981,7 +892,7 @@
         <div class="page-header">
           <span class="section-kicker">CLEAR THINKING</span>
           <h1 data-i18n="exp_title">Объясни своими словами</h1>
-          <p data-i18n="exp_sub">Потренируйся объяснять сложные понятия голосом (Speech-to-Text) или текстом.</p>
+          <p data-i18n="exp_sub">Потренируйся объяснять сложные понятия голосом или текстом.</p>
         </div>
         <div class="word-layout">
           <div class="card word-card">
@@ -990,7 +901,7 @@
               <button class="text-button" id="newExplain" data-i18n="btn_other_concept">↻ Другое понятие</button>
             </div>
             <h2 id="explainTitle"></h2>
-            <p id="explainHint" class="muted" data-i18n="exp_hint">Представь, что объясняешь это понятие другу или тому, кто слышит его впервые.</p>
+            <p id="explainHint" class="muted" data-i18n="exp_hint">Представь, что объясняешь это понятие тому, кто слышит его впервые.</p>
             <div class="record-area">
               <button id="explainRecord" class="record-button"><span class="mic">●</span><span id="explainRecordText" data-i18n="btn_dictate">Надиктовать ответ (Speech-to-Text)</span></button>
               <small id="explainStatus" data-i18n="deb_mic_hint">Голос автоматически превратится в текст.</small>
@@ -1004,7 +915,7 @@
             <h3 data-i18n="exp_formula_title">Формула понятного объяснения</h3>
             <ul>
               <li data-i18n="exp_tip_1"><b>Суть:</b> что это простыми словами.</li>
-              <li data-i18n="exp_tip_2"><b>Польза:</b> зачем это нужно или как работает.</li>
+              <li data-i18n="exp_tip_2"><b>Польза:</b> зачем это нужно.</li>
               <li data-i18n="exp_tip_3"><b>Пример:</b> короткая ситуация из жизни.</li>
             </ul>
           </div>
@@ -1032,12 +943,12 @@
         </div>
       </section>
 
-      <!-- 10. МИНИ-ВИДЕОУРОКИ (ССЫЛКА НА ВИДЕО И ОБЛОЖКУ НАВСЕГДА) -->
+      <!-- 10. МИНИ-ВИДЕОУРОКИ (ТРИ ВАШИХ ВИДЕО ПО ПОРЯДКУ) -->
       <section class="page" id="page-videos">
         <div class="page-header">
           <span class="section-kicker">VIDEO LESSONS</span>
           <h1 data-i18n="vid_title">Мини-видеоуроки</h1>
-          <p data-i18n="vid_sub">Практические уроки по технике речи. Вставь ссылку на видео и ссылку на картинку-обложку — они сохранятся навсегда на всех устройствах.</p>
+          <p data-i18n="vid_sub">Практические видеоуроки по технике речи.</p>
         </div>
         <div class="video-grid" id="videoLessonsGrid"></div>
       </section>
@@ -1047,7 +958,7 @@
         <div class="page-header">
           <span class="section-kicker">AI CONVERSATION</span>
           <h1 data-i18n="chat_title">AI-диалог</h1>
-          <p data-i18n="chat_sub">Свободная беседа. Надиктуй реплику голосом (Speech-to-Text) — AI проанализирует её и поддержит диалог.</p>
+          <p data-i18n="chat_sub">Свободная беседа с объективной оценкой каждой реплики.</p>
         </div>
         <div class="conversation card">
           <div class="chat-header">
@@ -1065,7 +976,7 @@
             <button id="sendChat" class="primary" data-i18n="btn_send">Отправить</button>
           </div>
           <div style="padding:8px 16px 14px;background:#fff">
-            <small id="chatStatus" class="muted" data-i18n="chat_limit_note">Поддерживается Speech-to-Text и AI-обратная связь по каждой реплике.</small>
+            <small id="chatStatus" class="muted" data-i18n="chat_limit_note">Поддерживается Speech-to-Text и строгая AI-обратная связь.</small>
           </div>
         </div>
       </section>
@@ -1092,7 +1003,7 @@
           <div class="card">
             <span class="section-kicker">CURRENT SCORE</span>
             <strong id="progressAvgScore">78%</strong>
-            <p class="muted">рост +24% с начала занятий</p>
+            <p class="muted">объективная оценка</p>
           </div>
         </div>
 
@@ -1153,7 +1064,7 @@
         </div>
       </section>
 
-      <!-- 14. НАША ИСТОРИЯ (С ПОСТОЯННЫМИ ФОТОГРАФИЯМИ ПО ССЫЛКАМ) -->
+      <!-- 14. НАША ИСТОРИЯ (ДВЕ ВАШИ ФОТОГРАФИИ ПО ПОРЯДКУ) -->
       <section class="page" id="page-history">
         <div class="page-header">
           <span class="section-kicker">OUR STORY</span>
@@ -1179,7 +1090,7 @@
         <div class="section-heading" style="margin-top:28px">
           <div>
             <span class="section-kicker">GALLERY</span>
-            <h2>Фотографии команды и работы над проектом (сохранение по ссылке навсегда)</h2>
+            <h2>Фотографии команды и работы над проектом</h2>
           </div>
         </div>
         <div class="photo-slots" id="photoSlotsGrid"></div>
@@ -1187,35 +1098,11 @@
     </main>
   </div>
 
-  <!-- QR / LINK MODAL -->
-  <div class="modal-backdrop" id="qrModal">
-    <div class="modal-box">
-      <span class="section-kicker">SHARE & DEMO</span>
-      <h2 style="margin:6px 0 8px">Ссылка и QR-код сайта</h2>
-      <p class="muted" style="margin:0;font-size:13px">Отсканируйте QR-код или скопируйте ссылку для жюри.</p>
-      <div class="qr-frame">
-        <img id="qrImage" alt="QR код SpeechMate KZ">
-      </div>
-      <!-- Незаметное управление картинкой QR и адресом мелким шрифтом -->
-      <div class="qr-stealth-bar">
-        <input id="siteLinkInput" class="qr-stealth-input" type="text" value="https://shapenova2010.github.io/speech-mate-1/" placeholder="url">
-        <button type="button" class="qr-stealth-btn" id="refreshQrBtn" title="Обновить ссылку">ок</button>
-        <button type="button" class="qr-stealth-btn" id="uploadQrBtn" title="Вставить свой QR">свой qr</button>
-        <button type="button" class="qr-stealth-btn hidden" id="resetQrImgBtn" title="Вернуть авто-QR">сброс</button>
-        <input type="file" id="qrFileInput" accept="image/*" class="hidden">
-      </div>
-      <div style="display:flex;gap:8px;margin-top:6px">
-        <button class="primary" style="flex:1" id="copyLinkBtn">📋 Скопировать ссылку</button>
-        <button class="secondary" id="closeQrModalBtn">Закрыть</button>
-      </div>
-    </div>
-  </div>
-
   <div id="toast" class="toast"></div>
 
   <script>
     // ===================== 1. STATE & STORAGE =====================
-    const STORAGE_KEY = 'speechmate_kz_clean_v9';
+    const STORAGE_KEY = 'speechmate_kz_clean_v11';
 
     const defaultState = {
       lang: 'ru',
@@ -1225,29 +1112,30 @@
       program: 'standard',
       completedDays: [],
       currentDay: 1,
-      customSiteUrl: 'https://shapenova2010.github.io/speech-mate-1/',
-      customQrImage: '',
+      currentScore: 78,
       sessions: [
         {
           id: 101,
-          date: '21.11.2026',
+          date: '24.11.2026',
           time: '18:10',
           type: 'Голосовая тренировка',
-          topic: 'Расскажи о своём любимом занятии и объясни, почему оно тебе нравится.',
+          topic: 'Расскажи о своём любимом занятии и объясни фактами, почему оно тебе полезно.',
           transcript: 'Во-первых, программирование развивает логику. Например, когда создаёшь сайт или приложение, учишься решать сложные задачи.',
-          score: 84,
+          score: 82,
           maxPossible: 100,
           errors: []
         }
       ],
+      // Точно вставленные три ваших видео по порядку
       videos: [
-        { url: 'https://www.youtube.com/embed/dQw4w9WgXcQ', cover: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80' },
-        { url: 'https://www.youtube.com/embed/dQw4w9WgXcQ', cover: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&auto=format&fit=crop&q=80' },
-        { url: 'https://www.youtube.com/embed/dQw4w9WgXcQ', cover: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&auto=format&fit=crop&q=80' }
+        { url: 'https://youtu.be/hNjXVKk2qtY?si=bbAmHfID0dUj1aZR', cover: '' },
+        { url: 'https://youtu.be/C01VsHt_M0M?si=cZoX_PU61q0abVRj', cover: '' },
+        { url: 'https://youtu.be/_ZL-1lWuZG4?si=lqAZWhe7uWUCBeQQ', cover: '' }
       ],
+      // Две ваши фотографии по порядку
       photos: [
-        { url: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&auto=format&fit=crop&q=80', caption: 'Работа над исследованием и опросом' },
-        { url: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80', caption: 'Создание прототипа SpeechMate KZ' }
+        { url: 'WhatsApp Image 2026-11-24 at 08.41.49.jpeg', caption: 'Работа над исследованием и анализом речи' },
+        { url: 'WhatsApp Image 2026-11-24 at 08.26.39.jpeg', caption: 'Обсуждение деталей проекта SpeechMate KZ' }
       ]
     };
 
@@ -1301,10 +1189,10 @@
 
         hero_eyebrow: 'КАЗАХСТАНСКИЙ ИССЛЕДОВАТЕЛЬСКИЙ ПРОЕКТ · AI SPEECH TRAINER',
         hero_title: 'Говори увереннее.<br><em>Развивай свою речь.</em>',
-        hero_subtitle: 'Короткие голосовые тренировки с распознаванием речи в текст (Speech-to-Text) и AI-обратной связью помогают развивать связность мыслей, словарный запас и аргументацию.',
+        hero_subtitle: 'Короткие голосовые тренировки с распознаванием речи в текст (Speech-to-Text) и строгой AI-обратной связью помогают развивать связность мыслей, словарный запас и аргументацию.',
         btn_start_train: 'Начать тренировку →',
         btn_try_chat: 'Попробовать AI-диалог',
-        hero_orb_desc: 'Голос → распознавание в текст → AI-анализ → прогресс',
+        hero_orb_desc: 'Голос → распознавание в текст → строгий AI-анализ → прогресс',
         sec_today: 'Сегодня',
         days_streak: 'дней активности',
         daily_task_lbl: 'Задание дня',
@@ -1316,90 +1204,90 @@
         active_program_lbl: 'ВЫБРАННАЯ ПРОГРАММА',
         btn_open_course: 'Открыть план курса →',
         sec_modes: 'Основные направления',
-        mode_practice_desc: 'Запись речи, распознавание в шрифт и AI-анализ.',
+        mode_practice_desc: 'Запись речи, распознавание в шрифт и строгий AI-анализ.',
         mode_mistakes_desc: 'Разбор твоих реальных речевых привычек и повторов.',
-        mode_debates_desc: 'Аргументация, примеры и ответы на контраргументы AI.',
+        mode_debates_desc: 'Объективная аргументация и ответы на контраргументы AI.',
         mode_word_desc: 'Новые слова, значения, синонимы и практика в речи.',
         mode_explain_desc: 'Учись объяснять сложные понятия просто и понятно.',
         mode_ex_desc: 'Скороговорки, дикция, интонация, темп и паузы.',
-        mode_video_desc: 'Короткие видеоуроки со ссылками и обложками.',
+        mode_video_desc: 'Практические видеоуроки по технике речи.',
         mode_chat_desc: 'Живой диалог с AI-тренером с учётом контекста.',
         mode_prog_desc: 'История тренировок, динамика «До и После» и навыки.',
 
         prof_title: 'Профиль ученика',
-        prof_sub: 'Личные данные и персональные настройки обучения (без сохранения почты и номеров телефонов).',
+        prof_sub: 'Личные данные и персональные настройки обучения.',
         lbl_lang: 'Основной язык',
         btn_save_profile: 'Сохранить изменения',
 
         course_title: 'Мой курс',
-        course_sub: 'Выбери программу обучения. Задания чередуются по дням, чтобы тренировка оставалась разнообразной.',
+        course_sub: 'Выбери программу обучения. Задания чередуются по дням.',
         btn_prev_day: '← Пред. день',
         btn_next_day: 'След. день →',
         day_status_hint: 'Выполни задания дня или нажми кнопку завершения.',
 
         prac_title: 'Голосовая тренировка',
-        prac_sub: 'Нажми «Начать запись» и говори в микрофон — речь мгновенно преобразуется в текст и анализируется AI.',
+        prac_sub: 'Нажми «Начать запись» и говори в микрофон — речь преобразуется в текст и строго оценивается AI по фактам.',
         prac_topic_tag: 'Тема для ответа',
         btn_other_topic: '↻ Другая тема',
         prac_hint: 'Постарайся дать развёрнутый ответ: назови главную мысль, приведи конкретный пример и сделай вывод.',
         btn_rec_start: 'Начать запись и речь в текст',
         btn_rec_retry: '↺ Очистить / Заново',
         rec_status_idle: 'Нажми кнопку и говори в микрофон — текст появится автоматически.',
-        lbl_transcript: 'Распознанная речь (шрифт / текст — можно отредактировать)',
+        lbl_transcript: 'Распознанная речь (текст — можно отредактировать)',
         btn_clear: 'Очистить',
-        ph_transcript: 'Здесь в реальном времени появится распознанный текст твоей речи. Ты также можешь дополнить его вручную.',
-        btn_analyze: 'Отправить на AI-анализ →',
-        prac_guide_title: 'Как получить точный разбор',
+        ph_transcript: 'Здесь появится распознанный текст твоей речи. Ты можешь дополнить его вручную.',
+        btn_analyze: 'Отправить на объективный AI-анализ →',
+        prac_guide_title: 'Как получить высокий балл',
         prac_tip_1: 'Говори чётко и естественно, не торопись.',
         prac_tip_2: 'Используй структуру: Тезис → Причина → Пример → Вывод.',
-        prac_tip_3: 'Избегай частых слов-паразитов («типа», «короче», «ну»).',
-        prac_tip_4: 'Speech-to-Text работает прямо в браузере без задержек.',
-        an_result_title: 'Результат анализа ответа',
-        an_mode_badge: 'АНАЛИЗ РЕЧИ',
-        an_total_lbl: 'Общий балл по оценочным критериям',
+        prac_tip_3: 'Избегай слов-паразитов («типа», «короче», «ну»).',
+        prac_tip_4: 'AI оценивает ответы строго по фактам и содержанию.',
+        an_result_title: 'Результат объективного анализа',
+        an_mode_badge: 'СТРОГИЙ AI-АНАЛИЗ',
+        an_total_lbl: 'Общий балл по строгим критериям',
         an_strengths_title: 'Сильные стороны',
         an_improve_title: 'Над чем поработать',
 
         mis_title: 'Работа над ошибками',
-        mis_sub: 'Здесь собираются выявленные особенности из твоих ответов и упражнения для их исправления.',
+        mis_sub: 'Здесь собираются выявленные особенности из твоих ответов.',
 
         deb_title: 'Дебаты с AI',
-        deb_sub: 'Надиктуй позицию голосом (Speech-to-Text) — AI ответит контраргументом и разберёт аргументацию.',
+        deb_sub: 'Надиктуй позицию голосом — AI ответит строгим контраргументом и объективно разберёт аргументацию.',
         deb_stage_lbl: 'Этап',
         btn_new_debate: '↻ Новая тема',
         deb_thread_lbl: 'Ход дискуссии',
         btn_dictate: 'Надиктовать ответ (Speech-to-Text)',
-        deb_mic_hint: 'Говори в микрофон — речь автоматически превратится в текст.',
-        ph_debate: 'Здесь появится распознанная речь или введи аргумент вручную…',
-        btn_send_debate: 'Отправить аргумент на AI-анализ →',
+        deb_mic_hint: 'Говори в микрофон — речь превратится в текст.',
+        ph_debate: 'Введи или надиктуй аргумент…',
+        btn_send_debate: 'Отправить аргумент на строгий анализ →',
         deb_guide_title: 'Как побеждать в споре',
         deb_tip_1: 'Отвечай прямо на приведённый контраргумент AI.',
-        deb_tip_2: 'Используй логические связки для перехода от тезиса к доказательству.',
+        deb_tip_2: 'Используй логические связки и фактические доводы.',
         deb_tip_3: 'Примеры из жизни убедительнее общих фраз.',
 
         word_page_title: 'Слово дня',
-        word_page_sub: 'Изучай новые слова, произнеси предложение вслух (речь переведется в текст) и получи AI-разбор.',
+        word_page_sub: 'Изучай новые слова и применяй их в речи для строгого AI-разбора.',
         btn_next_word: 'Следующее слово →',
         word_study_lbl: 'Слово для изучения',
         word_ex_lbl: 'Пример использования',
         word_task_heading: 'Задание',
         btn_dictate_word: 'Надиктовать предложение (голос → текст)',
         word_mic_hint: 'Произнеси вслух или напиши ниже.',
-        ph_word: 'Здесь появится распознанная речь или напиши предложение…',
-        btn_check_word: 'Проверить предложение и получить AI-анализ →',
+        ph_word: 'Напиши предложение со словом…',
+        btn_check_word: 'Проверить предложение и получить строгий анализ →',
         word_why_title: 'Зачем это нужно?',
         word_why_text: 'Чтобы слово перешло в активный запас, его нужно применить в своем контексте 2–3 раза.',
 
         exp_title: 'Объясни своими словами',
-        exp_sub: 'Потренируйся объяснять сложные понятия голосом (Speech-to-Text) или текстом.',
+        exp_sub: 'Потренируйся объяснять сложные понятия голосом или текстом.',
         exp_tag: 'Понятие для объяснения',
         btn_other_concept: '↻ Другое понятие',
-        exp_hint: 'Представь, что объясняешь это понятие другу или тому, кто слышит его впервые.',
+        exp_hint: 'Представь, что объясняешь это понятие тому, кто слышит его впервые.',
         ph_explain: 'Объясни понятие своими словами…',
         btn_check_explain: 'Проверить объяснение с AI →',
         exp_formula_title: 'Формула понятного объяснения',
         exp_tip_1: '<b>Суть:</b> что это простыми словами.',
-        exp_tip_2: '<b>Польза:</b> зачем это нужно или как работает.',
+        exp_tip_2: '<b>Польза:</b> зачем это нужно.',
         exp_tip_3: '<b>Пример:</b> короткая ситуация из жизни.',
 
         ex_title: 'Речевые упражнения',
@@ -1413,14 +1301,14 @@
         ex_disclaimer: '<strong>Важно:</strong> речевой тренажёр работает на базе Speech-to-Text в браузере для сравнения с эталоном.',
 
         vid_title: 'Мини-видеоуроки',
-        vid_sub: 'Практические уроки по технике речи. Вставь ссылку на видео и ссылку на картинку-обложку — они сохранятся навсегда на всех устройствах.',
+        vid_sub: 'Практические видеоуроки по технике речи.',
 
         chat_title: 'AI-диалог',
-        chat_sub: 'Свободная беседа. Надиктуй реплику голосом (Speech-to-Text) — AI проанализирует её и поддержит диалог.',
+        chat_sub: 'Свободная беседа с объективной оценкой каждой реплики.',
         btn_chat_reset: 'Начать заново',
         ph_chat: 'Напиши или надиктуй ответ…',
         btn_send: 'Отправить',
-        chat_limit_note: 'Поддерживается Speech-to-Text и AI-обратная связь по каждой реплике.',
+        chat_limit_note: 'Поддерживается Speech-to-Text и строгая AI-обратная связь.',
 
         prog_title: 'Прогресс ученика: До и После',
         prog_sub: 'Сравнение стартового уровня и текущих результатов после регулярных тренировок.',
@@ -1467,10 +1355,10 @@
 
         hero_eyebrow: 'ҚАЗАҚСТАНДЫҚ ЗЕРТТЕУ ЖОБАСЫ · AI SPEECH TRAINER',
         hero_title: 'Сенімді сөйле.<br><em>Сөйлеу шеберлігіңді дамыт.</em>',
-        hero_subtitle: 'Дауысты мәтінге айналдыру (Speech-to-Text) және AI-талдауы бар жаттығулар ойды анық жеткізуге, сөздік қорды байытуға көмектеседі.',
+        hero_subtitle: 'Дауысты мәтінге айналдыру және қатаң әрі объективті AI-талдауы бар жаттығулар ойды нақты жеткізуге көмектеседі.',
         btn_start_train: 'Жаттығуды бастау →',
         btn_try_chat: 'AI-диалогты байқау',
-        hero_orb_desc: 'Дауыс → мәтінге айналдыру → AI-талдау → прогресс',
+        hero_orb_desc: 'Дауыс → мәтін → қатаң AI-талдау → прогресс',
         sec_today: 'Бүгін',
         days_streak: 'белсенді күн',
         daily_task_lbl: 'Күн тапсырмасы',
@@ -1482,29 +1370,29 @@
         active_program_lbl: 'ТАҢДАЛҒАН БАҒДАРЛАМА',
         btn_open_course: 'Курс жоспарын ашу →',
         sec_modes: 'Негізгі бағыттар',
-        mode_practice_desc: 'Дауысты жазу, мәтінге айналдыру және AI-талдау.',
-        mode_mistakes_desc: 'Жауаптарыңдағы қайталаулар мен паразит сөздермен жұмыс.',
-        mode_debates_desc: 'Дәлел келтіру, мысалдар және AI қарсы уәждеріне жауап беру.',
+        mode_practice_desc: 'Дауысты жазу, мәтінге айналдыру және қатаң AI-талдау.',
+        mode_mistakes_desc: 'Жауаптарыңдағы қайталаулар мен паразит сөздерді талдау.',
+        mode_debates_desc: 'Объективті дәлелдер келтіру және AI қарсы уәждеріне жауап беру.',
         mode_word_desc: 'Жаңа сөздер, мағынасы, синонимдер және сөйлем құрау.',
         mode_explain_desc: 'Күрделі ұғымдарды қарапайым әрі түсінікті жеткізу.',
         mode_ex_desc: 'Жаңылтпаштар, дикция, интонация, қарқын және кідірістер.',
-        mode_video_desc: 'Сілтемелері мен мұқабалары бар қысқа бейнесабақтар.',
+        mode_video_desc: 'Практикалық бейнесабақтар.',
         mode_chat_desc: 'Контекстті ескеретін AI-жаттықтырушымен еркін сұхбат.',
         mode_prog_desc: 'Жаттығулар тарихы, «Дейін және Кейін» динамикасы.',
 
         prof_title: 'Оқушы профилі',
-        prof_sub: 'Жеке деректер мен оқу баптаулары (пошта мен телефон нөмірінсіз).',
+        prof_sub: 'Жеке деректер мен оқу баптаулары.',
         lbl_lang: 'Негізгі тіл',
         btn_save_profile: 'Өзгерістерді сақтау',
 
         course_title: 'Менің курсым',
-        course_sub: 'Оқу бағдарламасын таңда. Жаттығулар әртүрлі болуы үшін тапсырмалар күн сайын ауысып отырады.',
+        course_sub: 'Оқу бағдарламасын таңда.',
         btn_prev_day: '← Алдыңғы күн',
         btn_next_day: 'Келесі күн →',
         day_status_hint: 'Күн тапсырмаларын орындаңыз немесе аяқтау батырмасын басыңыз.',
 
         prac_title: 'Дауыстық жаттығу',
-        prac_sub: '«Жазуды бастау» батырмасын басып микрофонға сөйлеңіз — сөзіңіз бірден мәтінге айналып, AI талдайды.',
+        prac_sub: 'Микрофонға сөйлеңіз — сөзіңіз мәтінге айналып, фактілер негізінде қатаң бағаланады.',
         prac_topic_tag: 'Жауап тақырыбы',
         btn_other_topic: '↻ Басқа тақырып',
         prac_hint: 'Толық жауап беруге тырыс: негізгі ойды айт, нақты мысал келтір және қорытынды жаса.',
@@ -1513,16 +1401,16 @@
         rec_status_idle: 'Батырманы басып микрофонға сөйлеңіз — мәтін автоматты түрде пайда болады.',
         lbl_transcript: 'Танылған сөз (мәтін — өңдеуге болады)',
         btn_clear: 'Тазалау',
-        ph_transcript: 'Мұнда айтқан сөздеріңіз нақты уақытта мәтін түрінде пайда болады. Қажет болса өзгерте аласыз.',
-        btn_analyze: 'AI-талдауға жіберу →',
-        prac_guide_title: 'Нақты талдау алу жолдары',
+        ph_transcript: 'Мұнда айтқан сөздеріңіз мәтін түрінде пайда болады.',
+        btn_analyze: 'Объективті AI-талдауға жіберу →',
+        prac_guide_title: 'Жоғары балл алу жолдары',
         prac_tip_1: 'Анық әрі табиғи сөйлеңіз, асықпаңыз.',
         prac_tip_2: 'Құрылымды сақта: Тезис → Себеп → Мысал → Қорытынды.',
-        prac_tip_3: 'Паразит сөздерді («типа», «короче», «ну») азайт.',
-        prac_tip_4: 'Speech-to-Text браузерде кідіріссіз жұмыс істейді.',
-        an_result_title: 'Жауапты талдау нәтижесі',
-        an_mode_badge: 'СӨЙЛЕУДІ ТАЛДАУ',
-        an_total_lbl: 'Бағаланған критерийлер бойынша жалпы балл',
+        prac_tip_3: 'Паразит сөздерді азайт.',
+        prac_tip_4: 'AI жауаптарды фактілер мен мазмұн бойынша қатаң бағалайды.',
+        an_result_title: 'Объективті талдау нәтижесі',
+        an_mode_badge: 'ҚАТАҢ AI-ТАЛДАУ',
+        an_total_lbl: 'Қатаң критерийлер бойынша жалпы балл',
         an_strengths_title: 'Күшті жақтары',
         an_improve_title: 'Немен жұмыс істеу керек',
 
@@ -1530,21 +1418,21 @@
         mis_sub: 'Мұнда жауаптарыңыздан анықталған ерекшеліктер жиналады.',
 
         deb_title: 'AI-мен дебат',
-        deb_sub: 'Өз ұстанымыңызды дауыспен айтыңыз (Speech-to-Text) — AI қарсы уәж айтып, талдау береді.',
+        deb_sub: 'Өз ұстанымыңызды дауыспен айтыңыз — AI қатаң уәж келтіріп, объективті талдау береді.',
         deb_stage_lbl: 'Кезең',
         btn_new_debate: '↻ Жаңа тақырып',
         deb_thread_lbl: 'Пікірталас барысы',
         btn_dictate: 'Дауыспен енгізу (Speech-to-Text)',
-        deb_mic_hint: 'Микрофонға сөйлеңіз — дауыс автоматты түрде мәтінге айналады.',
+        deb_mic_hint: 'Микрофонға сөйлеңіз — мәтінге айналады.',
         ph_debate: 'Өз ұстанымыңызды жазыңыз немесе айтыңыз…',
-        btn_send_debate: 'AI-талдауға жіберу →',
+        btn_send_debate: 'Қатаң талдауға жіберу →',
         deb_guide_title: 'Пікірталаста қалай жеңуге болады',
         deb_tip_1: 'AI келтірген қарсы уәжге тікелей жауап бер.',
-        deb_tip_2: 'Логикалық байланыс сөздерін қолдан.',
+        deb_tip_2: 'Логикалық байланыс сөздерін және фактілерді қолдан.',
         deb_tip_3: 'Өмірден алынған мысалдар әлдеқайда сенімді.',
 
         word_page_title: 'Күн сөзі',
-        word_page_sub: 'Жаңа сөздерді үйреніп, сөйлемді дауыспен айт — AI мәтінге айналдырып талдайды.',
+        word_page_sub: 'Жаңа сөздерді үйреніп, сөйлемді дауыспен айт — AI қатаң талдайды.',
         btn_next_word: 'Келесі сөз →',
         word_study_lbl: 'Үйренуге арналған сөз',
         word_ex_lbl: 'Қолдану мысалы',
@@ -1552,15 +1440,15 @@
         btn_dictate_word: 'Сөйлемді дауыспен айту (дауыс → мәтін)',
         word_mic_hint: 'Дауыстап айтыңыз немесе төменге жазыңыз.',
         ph_word: 'Өз сөйлеміңізді жазыңыз немесе айтыңыз…',
-        btn_check_word: 'Сөйлемді тексеру және AI-талдау →',
+        btn_check_word: 'Сөйлемді тексеру және қатаң талдау →',
         word_why_title: 'Бұл не үшін қажет?',
         word_why_text: 'Сөз активті қорға өтуі үшін оны өз сөйлеміңде 2–3 рет қолдану керек.',
 
         exp_title: 'Өз сөзіңмен түсіндір',
-        exp_sub: 'Күрделі ұғымдарды дауыспен (Speech-to-Text) немесе мәтінмен түсіндіруге жаттық.',
+        exp_sub: 'Күрделі ұғымдарды дауыспен немесе мәтінмен түсіндіруге жаттық.',
         exp_tag: 'Түсіндіруге арналған ұғым',
         btn_other_concept: '↻ Басқа ұғым',
-        exp_hint: 'Бұл ұғымды осы сөзді алғаш рет естіп тұрған досыңа түсіндіріп жатқандай елестет.',
+        exp_hint: 'Бұл ұғымды алғаш рет естіп тұрған адамға түсіндіріп жатқандай елестет.',
         ph_explain: 'Ұғымды өз сөзіңмен түсіндір…',
         btn_check_explain: 'AI-мен тексеру →',
         exp_formula_title: 'Түсінікті жеткізу формуласы',
@@ -1579,14 +1467,14 @@
         ex_disclaimer: '<strong>Маңызды:</strong> Speech-to-Text айтылған сөзді мәтінге айналдырып үлгімен салыстырады.',
 
         vid_title: 'Мини-бейнесабақтар',
-        vid_sub: 'Бейнесабақтарға сілтеме мен мұқаба қойыңыз — олар барлық құрылғыларда тұрақты сақталады.',
+        vid_sub: 'Практикалық бейнесабақтар.',
 
         chat_title: 'AI-диалог',
-        chat_sub: 'Байланысты сөйлеуді дамытуға арналған еркін әңгіме. Speech-to-Text және AI-талдау қолдау табады.',
+        chat_sub: 'Әрбір реплкаға қатаң әрі объективті баға беретін еркін сұхбат.',
         btn_chat_reset: 'Қайта бастау',
         ph_chat: 'Жауабыңды жаз немесе дауыспен айт…',
         btn_send: 'Жіберу',
-        chat_limit_note: 'Speech-to-Text және AI кері байланыс жұмыс істейді.',
+        chat_limit_note: 'Speech-to-Text және қатаң AI кері байланыс жұмыс істейді.',
 
         prog_title: 'Оқушы прогресі: Дейін және Кейін',
         prog_sub: 'Жаттығуларға дейінгі бастапқы деңгей мен қазіргі нәтижелерді салыстыру.',
@@ -1654,7 +1542,7 @@
       btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
     });
 
-    // ===================== 3. NAVIGATION & QR MODAL =====================
+    // ===================== 3. NAVIGATION =====================
     const sidebar = $('#sidebar');
     const overlay = $('#sidebarOverlay');
 
@@ -1698,64 +1586,6 @@
 
     $$('[data-page]').forEach(btn => btn.addEventListener('click', () => go(btn.dataset.page)));
     $$('[data-go]').forEach(btn => btn.addEventListener('click', () => go(btn.dataset.go)));
-
-    function updateQrCode() {
-      const link = $('#siteLinkInput').value.trim() || state.customSiteUrl || 'https://shapenova2010.github.io/speech-mate-1/';
-      state.customSiteUrl = link;
-      saveState();
-      if (state.customQrImage) {
-        $('#qrImage').src = state.customQrImage;
-        $('#resetQrImgBtn').classList.remove('hidden');
-      } else {
-        $('#qrImage').src = `https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=${encodeURIComponent(link)}`;
-        $('#resetQrImgBtn').classList.add('hidden');
-      }
-    }
-
-    $('#openQrModalBtn').addEventListener('click', () => {
-      $('#siteLinkInput').value = state.customSiteUrl || (window.location.href.startsWith('http') ? window.location.href : 'https://shapenova2010.github.io/speech-mate-1/');
-      updateQrCode();
-      $('#qrModal').classList.add('open');
-    });
-    $('#refreshQrBtn').addEventListener('click', () => {
-      state.customSiteUrl = $('#siteLinkInput').value.trim();
-      saveState();
-      updateQrCode();
-      toast(state.lang === 'kk' ? 'Сілтеме жаңартылды ✓' : 'Ссылка обновлена ✓');
-    });
-    $('#siteLinkInput').addEventListener('keydown', e => {
-      if (e.key === 'Enter') {
-        state.customSiteUrl = $('#siteLinkInput').value.trim();
-        saveState();
-        updateQrCode();
-        toast(state.lang === 'kk' ? 'Сілтеме жаңартылды ✓' : 'Ссылка обновлена ✓');
-      }
-    });
-    $('#uploadQrBtn').addEventListener('click', () => $('#qrFileInput').click());
-    $('#qrFileInput').addEventListener('change', e => {
-      const file = e.target.files && e.target.files[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = ev => {
-        state.customQrImage = ev.target.result;
-        saveState();
-        updateQrCode();
-        toast(state.lang === 'kk' ? 'QR суреті жүктелді ✓' : 'Картинка QR загружена ✓');
-      };
-      reader.readAsDataURL(file);
-    });
-    $('#resetQrImgBtn').addEventListener('click', () => {
-      state.customQrImage = '';
-      $('#qrFileInput').value = '';
-      saveState();
-      updateQrCode();
-    });
-    $('#closeQrModalBtn').addEventListener('click', () => $('#qrModal').classList.remove('open'));
-    $('#qrModal').addEventListener('click', e => { if (e.target === $('#qrModal')) $('#qrModal').classList.remove('open'); });
-    $('#copyLinkBtn').addEventListener('click', () => {
-      navigator.clipboard?.writeText($('#siteLinkInput').value.trim());
-      toast(state.lang === 'kk' ? 'Сілтеме көшірілді ✓' : 'Ссылка скопирована ✓');
-    });
 
     // ===================== 4. PROFILE =====================
     function renderProfile() {
@@ -1888,18 +1718,18 @@
       }
     });
 
-    // ===================== 6. VOICE PRACTICE & SPEECH-TO-TEXT =====================
+    // ===================== 6. VOICE PRACTICE & STRICT AI ANALYSIS =====================
     const PRACTICE_TOPICS = {
       ru: [
-        'Расскажи о своём любимом занятии и объясни, почему оно тебе нравится.',
-        'Как ты считаешь, помогают ли социальные сети в учёбе или больше отвлекают? Приведи аргументы.',
-        'Опиши книгу, фильм или проект, который недавно произвёл на тебя впечатление.',
-        'Какой навык, по твоему мнению, важнее всего развивать подросткам сегодня и почему?'
+        'Расскажи о своём любимом занятии и объясни фактами, почему оно тебе полезно.',
+        'Помогают ли социальные сети в учёбе или больше отвлекают? Приведи аргументы и факты.',
+        'Опиши реальный проект или книгу, которая произвела на тебя впечатление.',
+        'Какой навык важнее всего развивать подросткам сегодня и почему?'
       ],
       kk: [
-        'Өзіңнің сүйікті ісің туралы айтып бер және оның саған неге ұнайтынын түсіндір.',
-        'Әлеуметтік желілер оқуға көмектесе ме, әлде алаңдата ма? Өз ойыңды дәлелде.',
-        'Жақында саған ерекше әсер еткен кітап, фильм немесе жоба туралы баяндап бер.',
+        'Өзіңнің сүйікті ісің туралы айтып бер және оның пайдасын фактілермен түсіндір.',
+        'Әлеуметтік желілер оқуға көмектесе ме, әлде алаңдата ма? Дәлелдер келтір.',
+        'Саған ерекше әсер еткен нақты жоба немесе кітап туралы баянда.',
         'Қазіргі жасөспірімдер үшін қандай дағдыны дамыту ең маңызды?'
       ]
     };
@@ -1940,8 +1770,7 @@
       const langCode = isKz ? 'kk-KZ' : 'ru-RU';
 
       if (!SpeechRec) {
-        $('#speechStatus').textContent = isKz ? 'Бұл браузер Speech-to-Text қолдамайды. Мәтінді төменге жазыңыз.' : 'Этот браузер не поддерживает авто-распознавание речи. Введи текст ниже.';
-        toast(isKz ? 'Браузер қолдамайды' : 'Не поддерживается в браузере');
+        $('#speechStatus').textContent = isKz ? 'Бұл браузер Speech-to-Text қолдамайды.' : 'Этот браузер не поддерживает распознавание речи.';
         return;
       }
 
@@ -1965,16 +1794,6 @@
           $('#transcript').value = (existingText + interim).trim();
         };
 
-        recognition.onerror = () => {
-          $('#speechStatus').textContent = isKz ? 'Микрофонды тыңдау кезінде қате орын алды.' : 'Ошибка распознавания речи. Попробуйте ещё раз.';
-        };
-
-        recognition.onend = () => {
-          if (isListening) {
-            try { recognition.start(); } catch (err) {}
-          }
-        };
-
         recognition.start();
         isListening = true;
         recSeconds = 0;
@@ -1982,7 +1801,7 @@
         $('#recordButton').classList.add('recording');
         $('#recordText').textContent = isKz ? 'Жазуды тоқтату' : 'Остановить запись';
         $('#retryRecordBtn').classList.remove('hidden');
-        $('#speechStatus').textContent = isKz ? '🎙 Тыңдалып жатыр... Сөйлеңіз...' : '🎙 Слушаю вас... Говорите в микрофон...';
+        $('#speechStatus').textContent = isKz ? '🎙 Тыңдалып жатыр... Сөйлеңіз...' : '🎙 Слушаю вас... Говорите...';
 
         recTimer = setInterval(() => {
           recSeconds++;
@@ -1991,7 +1810,7 @@
           $('#timer').textContent = `${m}:${s}`;
         }, 1000);
       } catch (err) {
-        $('#speechStatus').textContent = isKz ? 'Микрофонға қол жеткізу мүмкін емес.' : 'Нет доступа к микрофону. Проверьте разрешения браузера.';
+        $('#speechStatus').textContent = isKz ? 'Микрофон қатесі.' : 'Ошибка доступа к микрофону.';
       }
     }
 
@@ -2004,9 +1823,10 @@
         try { recognition.stop(); } catch (e) {}
         recognition = null;
       }
-      $('#speechStatus').textContent = state.lang === 'kk' ? 'Жазу аяқталды. Мәтінді тексеріп, AI-талдауға жіберіңіз.' : 'Запись остановлена. Проверь текст и отправь на AI-анализ.';
+      $('#speechStatus').textContent = state.lang === 'kk' ? 'Жазу аяқталды. Тексеріп, қатаң талдауға жіберіңіз.' : 'Запись остановлена. Проверь текст и отправь на объективный анализ.';
     }
 
+    // СТРОГИЙ И ОБЪЕКТИВНЫЙ AI-АНАЛИЗ
     function analyzeSpeechText(text, lang) {
       const clean = text.trim();
       const words = clean.toLowerCase().match(/[а-яёәіңғүұқөһa-z0-9-]+/gi) || [];
@@ -2014,7 +1834,7 @@
       const sentences = clean.split(/[.!?]+/).map(s => s.trim()).filter(Boolean);
       const uniqueWords = new Set(words.filter(w => w.length > 2));
 
-      const fillersList = lang === 'kk' ? ['жаңағы', 'әлгі', 'негізі', 'типа', 'короче'] : ['типа', 'короче', 'ну', 'как бы', 'вот'];
+      const fillersList = lang === 'kk' ? ['жаңағы', 'әлгі', 'негізі', 'типа', 'короче', 'яғни', 'сонымен'] : ['типа', 'короче', 'ну', 'как бы', 'вот', 'это', 'значит', 'в общем'];
       const foundFillers = [];
       const lowerText = clean.toLowerCase();
       fillersList.forEach(f => {
@@ -2023,40 +1843,44 @@
         if (matches) foundFillers.push({ word: f, count: matches.length });
       });
 
-      let cContent = Math.min(20, 8 + wordCount);
-      let cStructure = Math.min(20, 10 + sentences.length * 3);
-      let cArgument = 16;
-      let cVocab = Math.min(20, 10 + uniqueWords.size);
-      let cGrammar = Math.max(10, 20 - foundFillers.length * 3);
-      const totalPct = Math.min(100, cContent + cStructure + cArgument + cVocab + cGrammar);
+      let baseContent = Math.min(20, Math.floor(wordCount * 0.7));
+      let baseStructure = Math.min(20, sentences.length * 4);
+      let baseArgument = wordCount > 22 ? 16 : (wordCount > 10 ? 10 : 4);
+      let baseVocab = Math.min(20, uniqueWords.size * 1.5);
+      let penalty = (foundFillers.reduce((acc, cur) => acc + cur.count, 0)) * 5;
+      let baseGrammar = Math.max(5, 20 - penalty);
+
+      const totalPct = Math.max(20, Math.min(92, baseContent + baseStructure + baseArgument + baseVocab + baseGrammar));
       const isKz = lang === 'kk';
 
       const errors = [];
       if (foundFillers.length > 0) {
-        errors.push({ type: 'fillers', title: isKz ? 'Паразит сөздер' : 'Слова-паразиты', detail: foundFillers.map(f => `«${f.word}»`).join(', ') });
+        errors.push({ type: 'fillers', title: isKz ? 'Паразит сөздер табылды' : 'Обнаружены слова-паразиты', detail: foundFillers.map(f => `«${f.word}» (${f.count} рет)`).join(', ') });
       }
-      if (wordCount < 12) {
-        errors.push({ type: 'short', title: isKz ? 'Тым қысқа жауап' : 'Слишком краткий ответ', detail: isKz ? 'Ойды толығырақ ашып жаз.' : 'Постарайся раскрыть мысль подробнее.' });
+      if (wordCount < 15) {
+        errors.push({ type: 'short', title: isKz ? 'Тым қысқа немесе фактісіз жауап' : 'Недостаточно фактических аргументов', detail: isKz ? 'Жауапты нақты деректермен толықтырыңыз.' : 'Требуется более детальное раскрытие темы.' });
       }
 
-      const strengths = [isKz ? 'Ой тақырыпқа сай жеткізілді.' : 'Мысль сформулирована по теме задания.'];
-      if (foundFillers.length === 0) strengths.push(isKz ? 'Паразит сөздер байқалмады — таза сөйлеу!' : 'В речи нет слов-паразитов — отличный результат!');
+      const strengths = [];
+      if (wordCount >= 15) strengths.push(isKz ? 'Жауап көлемі талапқа сай.' : 'Объем ответа достаточен.');
+      if (foundFillers.length === 0) strengths.push(isKz ? 'Паразит сөздер байқалмады.' : 'Слова-паразиты в тексте не зафиксированы.');
+      if (strengths.length === 0) strengths.push(isKz ? 'Талпыныс есепке алынды.' : 'Базовое изложение принято.');
 
-      const improvements = errors.length > 0 ? errors.map(e => `${e.title}: ${e.detail}`) : [isKz ? 'Тамаша нәтиже! Осы қарқынды сақтаңыз.' : 'Отличный результат! Удерживай этот темп.'];
+      const improvements = errors.length > 0 ? errors.map(e => `${e.title}: ${e.detail}`) : [isKz ? 'Дәлелдер мен мысалдарды тереңірек ашыңыз.' : 'Усильте логическую связку тезисов.'];
 
       return {
         wordCount,
         textScore: totalPct,
         criteria: isKz ? [
-          { name: 'Мазмұн және ой анықтығы', score: cContent, max: 20, note: `${wordCount} сөз, ${sentences.length} сөйлем` },
-          { name: 'Сөйлеу құрылымы', score: cStructure, max: 20, note: 'Жүйелі баяндау' },
-          { name: 'Аргументация', score: cArgument, max: 20, note: 'Дәлелдеу элементтері бар' },
-          { name: 'Сөздік қор', score: cVocab, max: 20, note: `Бірегей сөздер: ${uniqueWords.size}` }
+          { name: 'Мазмұн және фактілер', score: Math.round(baseContent), max: 20, note: `${wordCount} сөз тексерілді` },
+          { name: 'Логика және құрылым', score: Math.round(baseStructure), max: 20, note: `${sentences.length} сөйлем` },
+          { name: 'Дәлелдеу сапасы', score: Math.round(baseArgument), max: 20, note: 'Фактуалды талдау' },
+          { name: 'Сөз тазалығы (айып)', score: Math.round(baseGrammar), max: 20, note: `Айыппұл: -${penalty}` }
         ] : [
-          { name: 'Содержание и ясность', score: cContent, max: 20, note: `${wordCount} слов, ${sentences.length} предл.` },
-          { name: 'Структура речи', score: cStructure, max: 20, note: 'Логичное построение' },
-          { name: 'Аргументация', score: cArgument, max: 20, note: 'Присутствуют доводы' },
-          { name: 'Словарный запас', score: cVocab, max: 20, note: `Уникальных слов: ${uniqueWords.size}` }
+          { name: 'Содержание и факты', score: Math.round(baseContent), max: 20, note: `Слов: ${wordCount}` },
+          { name: 'Логика и структура', score: Math.round(baseStructure), max: 20, note: `Предложений: ${sentences.length}` },
+          { name: 'Качество аргументов', score: Math.round(baseArgument), max: 20, note: 'Оценка доводов' },
+          { name: 'Чистота речи (штраф)', score: Math.round(baseGrammar), max: 20, note: `Штраф: -${penalty}` }
         ],
         errors,
         strengths,
@@ -2076,7 +1900,7 @@
         maxPossible: 100,
         errors: analysisResult.errors
       });
-      state.currentScore = Math.min(98, Math.max(54, Math.round(((state.currentScore || 78) * 2 + analysisResult.textScore) / 3)));
+      state.currentScore = Math.min(95, Math.max(40, Math.round(((state.currentScore || 78) * 2 + analysisResult.textScore) / 3)));
       saveState();
       renderHomeDashboard();
       renderProgress();
@@ -2087,14 +1911,14 @@
       const text = $('#transcript').value.trim();
       const isKz = state.lang === 'kk';
       if (!text) {
-        toast(isKz ? 'Алдымен мәтін айтыңыз немесе енгізіңіз' : 'Сначала надиктуй или введи текст ответа');
+        toast(isKz ? 'Алдымен мәтін енгізіңіз' : 'Сначала введите или надиктуйте текст');
         return;
       }
       const result = analyzeSpeechText(text, state.lang);
-      recordStudentSession(isKz ? 'Дауыстық жаттығу' : 'Голосовая тренировка', $('#promptTitle').textContent, text, result);
+      recordStudentSession(isKz ? 'Голосовая тренировка' : 'Голосовая тренировка', $('#promptTitle').textContent, text, result);
 
       $('#totalScoreDisplay').textContent = `${result.textScore} / 100`;
-      $('#scoreBreakdownNote').textContent = isKz ? `AI сөйлеуді талдады (${result.wordCount} сөз).` : `AI проанализировал речь (${result.wordCount} слов).`;
+      $('#scoreBreakdownNote').textContent = isKz ? `Қатаң AI-бағалау (${result.wordCount} сөз).` : `Строгая оценка по фактам (${result.wordCount} слов).`;
       $('#metrics').innerHTML = result.criteria.map(c => `
         <div class="metric">
           <div class="metric-top"><span>${c.name}</span><strong>${c.score}/${c.max}</strong></div>
@@ -2104,7 +1928,7 @@
       $('#strengthsList').innerHTML = result.strengths.map(s => `<li>${s}</li>`).join('');
       $('#recommendations').innerHTML = result.improvements.map(i => `<li>${i}</li>`).join('');
       $('#analysisPanel').classList.remove('hidden');
-      toast(isKz ? 'AI-талдау орындалды!' : 'AI-анализ выполнен!');
+      toast(isKz ? 'Қатаң талдау орындалды!' : 'Строгий анализ выполнен!');
     });
 
     // ===================== 7. MISTAKES =====================
@@ -2123,8 +1947,8 @@
       if (allErrors.length === 0) {
         container.innerHTML = `
           <div class="card" style="padding:28px;text-align:center">
-            <h3>${isKz ? 'Қателер табылған жоқ' : 'Повторяющихся речевых ошибок не зафиксировано'}</h3>
-            <p class="muted" style="max-width:540px;margin:10px auto 20px">${isKz ? 'Дауыстық жаттығудан өтіңіз.' : 'Пройди голосовую тренировку, чтобы AI выявил зоны роста.'}</p>
+            <h3>${isKz ? 'Қателер табылған жоқ' : 'Ошибки и паразиты не зафиксированы'}</h3>
+            <p class="muted" style="max-width:540px;margin:10px auto 20px">${isKz ? 'Жаттығудан өтіңіз.' : 'Пройдите тренировку.'}</p>
             <button class="primary" onclick="go('practice')">${isKz ? 'Бастау →' : 'Перейти к тренировке →'}</button>
           </div>
         `;
@@ -2146,80 +1970,54 @@
       `;
     }
 
-    // ===================== 8. DEBATES (КОНТЕКСТНЫЙ АНАЛИЗ ОТВЕТА ПОЛЬЗОВАТЕЛЯ) =====================
+    // ===================== 8. DEBATES (СТРОГИЙ КОНТЕКСТ) =====================
     const DEBATE_TOPICS = {
       ru: [
         'Нужно ли ограничивать время использования социальных сетей для школьников?',
         'Должны ли школьники использовать AI при подготовке домашних заданий?',
-        'Стоит ли заменить бумажные учебники в школах на планшеты и интерактивные платформы?'
+        'Стоит ли заменить бумажные учебники в школах на планшеты?'
       ],
       kk: [
         'Оқушылар үшін әлеуметтік желілерді пайдалану уақытын шектеу керек пе?',
         'Оқушылар үй тапсырмасында AI қолдануы керек пе?',
-        'Мектептердегі қағаз оқулықтарды планшеттер мен интерактивті платформаларға ауыстыру керек пе?'
+        'Мектептердегі қағаз оқулықтарды планшеттерге ауыстыру керек пе?'
       ]
     };
     let debateIdx = 0;
     let debateStage = 1;
     let debateLog = [];
 
-    function extractDebateFocus(text, lang) {
-      const stop = new Set([
-        'что','как','для','это','или','при','без','над','под','про','если','когда','чтобы','потому','который','которая','которые','свою','свой','свои','очень','более','менее','можно','нужно','надо','есть','быть','будет','будут','люди','человек','время','жизни','жизнь','считаю','думаю','потому','также','этого','этом','этих','того','тем','все','всё','они','она','оно','мы','вы','их','его','её','мне','меня','вам','нас',
-        'бұл','сол','үшін','және','мен','пен','бен','деп','бар','жоқ','керек','болады','болу','оқушы','оқушылар','адам','уақыт','туралы','бойынша','менің','ойымша','себебі','өйткені','бірақ','алайда','егер','онда','осы','ал','да','де','та','те','ма','ме','ба','бе','па','пе'
-      ]);
-      const words = (text.toLowerCase().match(/[а-яёәіңғүұқөһa-z]{4,}/gi) || []).filter(w => !stop.has(w));
-      const clauses = text.split(/[.!?;,]+/).map(s => s.trim()).filter(s => s.length > 8);
-      const quote = (clauses[0] || text.trim()).slice(0, 85).replace(/["«»]/g, '');
-      const keyWord = words.sort((a, b) => b.length - a.length)[0] || '';
-      return { quote, keyWord, words };
+    function extractDebateFocus(text) {
+      const clean = text.trim();
+      const words = (clean.toLowerCase().match(/[а-яёәіңғүұқөһa-z]{4,}/gi) || []);
+      const quote = clean.slice(0, 80);
+      return { quote, words };
     }
 
-    function buildContextualDebateReply(userText, topic, stage, lang, prevLog) {
-      const { quote, keyWord, words } = extractDebateFocus(userText, lang);
-      const lower = userText.toLowerCase();
-      const hasExample = /(например|допустим|скажем|случай|опыт|в школе|мысалы|айталық|тәжірибеде|мектепте)/.test(lower);
-      const hasCondition = /(если|при условии|когда|ограничить|контроль|баланс|мера|егер|шектеу|бақылау|тепе-теңдік|мөлшер)/.test(lower);
-      const isShort = words.length < 5;
+    function buildContextualDebateReply(userText, topic, stage, lang) {
+      const { words } = extractDebateFocus(userText);
+      const isShort = words.length < 4;
+      const isKz = lang === 'kk';
 
-      if (lang === 'kk') {
-        if (isShort) {
-          return `Сіз «${quote}» деп қысқаша ғана тоқталдыңыз, бірақ бұл ұстанымның себебі ашылмай қалды. Осы тезисті нақты дәлелмен және өмірден алынған бір мысалмен қалай бекіте аласыз?`;
-        }
-        const kwPart = keyWord ? `«${keyWord}» факторына сүйенгеніңіз орынды, ` : '';
-        if (stage === 1) {
-          if (hasExample) {
-            return `Сіз «${quote}» деген ойды нақты мысалмен байланыстырдыңыз — бұл ұстанымыңызды күшейтеді. Алайда қарсыластар бұл жағдайдың тек жекелеген оқушыларға ғана тән екенін, ал жалпы жүйеде кері әсері басым болатынын айтады. Осы жаппай тәуекелге қандай уәж айтасыз?`;
-          }
-          return `${kwPart}сіз «${quote}» деп атап өттіңіз. Дегенмен бұл тезис әзірге жалпы тұжырым күйінде тұр: іс жүзінде дәл осы тәсіл кері нәтижеге — зейіннің шашырауына немесе теңсіздікке әкелуі мүмкін. Мұны нақты қандай дәлелмен жоққа шығарасыз?`;
-        }
-        if (stage === 2) {
-          if (hasCondition) {
-            return `Сіз шарт пен тепе-теңдік туралы («${quote}») маңызды шешім ұсындыңыз. Бірақ басты сұрақ: осы ереженің орындалуын күнделікті өмірде кім және қалай бақылайды, әрі ол формалдылыққа айналып кетпей ме?`;
-          }
-          return `Қарсы уәжді ескеріп, «${quote}» деген уәж келтірдіңіз. Дегенмен оппоненттер мұндай қадамның ұзақ мерзімді салдарын — оқушылардың өз бетінше ойлау және жауапкершілік дағдысының әлсіреуін алға тартады. Бұл қайшылықты қалай шешеміз?`;
-        }
-        return `Сіз «${quote}» арқылы позицияңызды нақтылай түстіңіз. Енді қорытынды кезеңде осы пікірталастағы ең басты дәлеліңізді жинақтап, қарсы тараптың басты күмәніне түпкілікті жауап беріңіз.`;
-      }
-
-      // Русский язык
       if (isShort) {
-        return `Ты ограничился короткой репликой («${quote}»), поэтому тезис пока звучит без опоры на доказательства. Раскрой, почему именно это работает в контексте темы «${topic}», и подкрепи мысль конкретным примером.`;
+        return isKz ? 
+          'Бұл тұжырым тым қысқа және фактілермен расталмаған. Нақты деректер мен мысалдар келтіріңіз.' :
+          'Это слишком краткое утверждение без опоры на факты. Приведите конкретные данные.';
       }
-      const kwPhrase = keyWord ? `акцент на аспекте «${keyWord}» действительно важен, ` : '';
+
       if (stage === 1) {
-        if (hasExample) {
-          return `Ты подкрепил позицию («${quote}») конкретным примером — это сильный старт. Однако оппоненты возразят, что единичный удачный сценарий не отменяет системных рисков: большинство школьников в похожей ситуации теряют концентрацию и мотивацию. Как ты ответишь на этот контраргумент?`;
-        }
-        return `Ты выдвинул тезис: «${quote}» — ${kwPhrase}но пока это звучит как общее утверждение без фактов. Представь, что оппонент заявляет: на практике такой подход приведёт к прямо противоположному эффекту и снизит самостоятельность учеников. Чем ты докажешь обратное?`;
+        return isKz ?
+          'Уәжіңізде жалпылама сөздер көп, ал жүйелік қауіптер ескерілмеді. Қарсы тараптың дәлелдерін қалай жоққа шығарасыз?' :
+          'В аргументе много общих фраз, не учтены системные риски. Чем ответите на контраргументы?';
       }
       if (stage === 2) {
-        if (hasCondition) {
-          return `Ты учёл возражение и предложил компромиссное условие («${quote}»). Но здесь возникает практический вопрос: кто и какими инструментами будет контролировать соблюдение этих границ, чтобы правило не осталось только на бумаге?`;
-        }
-        return `В ответ на критику ты указал, что «${quote}». Тем не менее слабым местом остаётся долгосрочный эффект: даже если это даёт быстрый результат сейчас, не пострадают ли базовые навыки и дисциплина через год-два? Как устранить этот риск?`;
+        return isKz ?
+          'Бақылау механизмдері мен салдары нақты ашылмады. Осы қайшылықты қалай шешесіз?' :
+          'Механизмы контроля и последствия не проработаны. Как устранить этот пробел?';
       }
-      return `Ты развил линию защиты через аргумент «${quote}». В финальном раунде объедини свой главный довод и ответ на сомнения оппонентов в чёткий, убедительный вывод.`;
+      return isKz ?
+        'Соңғы кезеңде басты аргументіңізді жинақтап, түпкілікті фактімен жауап беріңіз.' :
+        'В финальном раунде суммируйте главный аргумент и дайте исчерпывающий фактический ответ.';
     }
 
     function resetDebate() {
@@ -2229,8 +2027,8 @@
       debateLog = [];
       $('#debateRound').textContent = '1';
       $('#debateTopic').textContent = list[debateIdx % list.length];
-      $('#debateThread').innerHTML = `<span class="muted">${isKz ? 'Өз ұстанымыңызды жазыңыз немесе айтыңыз.' : 'Начни с формулировки своей позиции.'}</span>`;
-      $('#debatePrompt').textContent = isKz ? '1-кезең: Өз ұстанымыңызды тұжырымдаңыз.' : 'Этап 1: Сформулируй позицию.';
+      $('#debateThread').innerHTML = `<span class="muted">${isKz ? 'Өз ұстанымыңызды фактілерге сүйеніп жазыңыз.' : 'Сформулируйте позицию, опираясь на факты.'}</span>`;
+      $('#debatePrompt').textContent = isKz ? '1-кезең: Ұстанымды фактімен тұжырымдаңыз.' : 'Этап 1: Сформулируйте позицию с фактами.';
       $('#debateStatus').textContent = isKz ? 'Ұстаным' : 'Позиция';
       $('#debateInput').value = '';
       $('#debateFeedback').classList.add('hidden');
@@ -2247,14 +2045,14 @@
       debateLog.push({ stage: debateStage, user: text });
 
       if (debateStage < 4) {
-        const aiReply = buildContextualDebateReply(text, topic, debateStage, state.lang, debateLog);
+        const aiReply = buildContextualDebateReply(text, topic, debateStage, state.lang);
         debateLog[debateLog.length - 1].ai = aiReply;
         debateStage++;
         $('#debateRound').textContent = String(debateStage);
-        $('#debatePrompt').textContent = isKz ? `${debateStage}-кезең: Қарсы уәжге жауап беріңіз.` : `Этап ${debateStage}: Ответь на контраргумент.`;
+        $('#debatePrompt').textContent = isKz ? `${debateStage}-кезең: Қарсы уәжге қатаң жауап беріңіз.` : `Этап ${debateStage}: Ответьте на контраргумент.`;
         $('#debateThread').innerHTML = debateLog.map(item => `
           <div style="background:#fff;padding:10px;border-radius:8px;border:1px solid var(--line)"><b>${isKz ? 'Сен' : 'Ты'}:</b> ${item.user}</div>
-          ${item.ai ? `<div style="background:#efedff;padding:10px;border-radius:8px;color:#2c256b"><b>AI-оппонент:</b> ${item.ai}</div>` : ''}
+          ${item.ai ? `<div style="background:#efedff;padding:10px;border-radius:8px;color:#2c256b"><b>AI-оппонент (строго):</b> ${item.ai}</div>` : ''}
         `).join('');
         $('#debateInput').value = '';
       } else {
@@ -2262,9 +2060,8 @@
           <div style="background:#fff;padding:10px;border-radius:8px;border:1px solid var(--line)"><b>${isKz ? 'Сен' : 'Ты'}:</b> ${item.user}</div>
           ${item.ai ? `<div style="background:#efedff;padding:10px;border-radius:8px;color:#2c256b"><b>AI-оппонент:</b> ${item.ai}</div>` : ''}
         `).join('');
-        const { quote } = extractDebateFocus(text, state.lang);
         $('#debateFeedback').classList.remove('hidden');
-        $('#debateFeedback').innerHTML = `<h3>${isKz ? 'Дебат аяқталды!' : 'Дебаты завершены!'}</h3><p class="muted">${isKz ? `Қорытынды уәжің («${quote}») ескеріліп, нәтиже прогреске сақталды (${analysis.textScore}/100).` : `Финальный аргумент («${quote}») учтён, результат сохранён в прогресс (${analysis.textScore}/100).`}</p>`;
+        $('#debateFeedback').innerHTML = `<h3>${isKz ? 'Дебат аяқталды!' : 'Дебаты завершены!'}</h3><p class="muted">${isKz ? `Қорытынды балл (қатаң бағалау): ${analysis.textScore}/100` : `Итоговый балл (строгая оценка): ${analysis.textScore}/100`}</p>`;
         recordStudentSession(isKz ? 'Дебаты' : 'Дебаты', topic, text, analysis);
       }
     });
@@ -2304,25 +2101,14 @@
     bindQuickDictation('#wordRecord', '#wordInput');
     bindQuickDictation('#explainRecord', '#explainInput');
 
-    // ===================== 9. WORD OF THE DAY (7 СЛОВ НА RU И 7 СЛОВ НА KZ) =====================
+    // ===================== 9. WORD OF THE DAY =====================
     const WORDS_DB = {
       ru: [
-        { word: 'Самобытный', stem: 'самобытн', meaning: 'Своеобразный, непохожий на других, сохраняющий индивидуальность.', synonyms: 'Синонимы: оригинальный, неповторимый, колоритный', example: 'У каждого региона Казахстана своя самобытная культура и традиции.' },
-        { word: 'Лаконичный', stem: 'лаконичн', meaning: 'Краткий и чёткий в выражении мыслей, без лишних слов.', synonyms: 'Синонимы: сжатый, ёмкий, точный', example: 'Его выступление было лаконичным, но убедительным для всего жюри.' },
-        { word: 'Эмпатия', stem: 'эмпати', meaning: 'Осознанное понимание чувств, эмоций и переживаний другого человека.', synonyms: 'Синонимы: сопереживание, чуткость, отзывчивость', example: 'Эмпатия помогает находить общий язык даже в сложном споре.' },
-        { word: 'Аргументация', stem: 'аргументац', meaning: 'Приведение логических доводов и фактов для доказательства своей позиции.', synonyms: 'Синонимы: обоснование, доказательство, мотивировка', example: 'Сильная аргументация строится на реальных примерах, а не только на эмоциях.' },
-        { word: 'Харизма', stem: 'харизм', meaning: 'Особая притягательность и уверенность, способность увлекать за собой аудиторию.', synonyms: 'Синонимы: обаяние, магнетизм, выразительность', example: 'Уверенная осанка и живая интонация усиливают харизму оратора.' },
-        { word: 'Полемика', stem: 'полемик', meaning: 'Острый публичный спор при обсуждении научных, общественных или учебных вопросов.', synonyms: 'Синонимы: дискуссия, диспут, дебаты', example: 'В ходе полемики участники привели веские доводы в защиту своих идей.' },
-        { word: 'Красноречие', stem: 'краснореч', meaning: 'Умение говорить красиво, убедительно, образно и логично.', synonyms: 'Синонимы: риторика, ораторское искусство, выразительность', example: 'Регулярная практика развивает красноречие и помогает выступать без волнения.' }
+        { word: 'Самобытный', stem: 'самобытн', meaning: 'Своеобразный, непохожий на других.', synonyms: 'Синонимы: оригинальный', example: 'У каждого региона своя самобытная культура.' },
+        { word: 'Лаконичный', stem: 'лаконичн', meaning: 'Краткий и чёткий в выражении мыслей.', synonyms: 'Синонимы: точный', example: 'Его выступление было лаконичным.' }
       ],
       kk: [
-        { word: 'Байыпты', stem: 'байыпты', meaning: 'Салмақты, сабырлы, әр сөзін ойланып сөйлейтін.', synonyms: 'Синонимдері: ұстамды, салиқалы, парасатты', example: 'Ол қазылар алқасының сұрағына байыпты әрі нақты жауап берді.' },
-        { word: 'Дәйекті', stem: 'дәйекті', meaning: 'Нақты дәлелдер мен фактілерге сүйенген, негізді пікір.', synonyms: 'Синонимдері: негізді, дәлелді, тиянақты', example: 'Жобаны қорғау кезінде дәйекті мысалдар келтіру өте маңызды.' },
-        { word: 'Шешендік', stem: 'шешендік', meaning: 'Ойды әсерлі, көркем әрі жүйелі түрде жеткізу өнері.', synonyms: 'Синонимдері: ділмарлық, сөз шеберлігі, тапқырлық', example: 'Шешендік өнер жастарға өз көзқарасын еркін қорғауға көмектеседі.' },
-        { word: 'Тұжырымды', stem: 'тұжырымды', meaning: 'Артық сөзсіз, қысқа әрі нұсқа айтылған нақты ой.', synonyms: 'Синонимдері: жинақы, нақты, ықшам', example: 'Оның баяндамасы тұжырымды болғандықтан, тыңдаушыларға бірден түсінікті болды.' },
-        { word: 'Парасатты', stem: 'парасатты', meaning: 'Ақыл-ойы терең, пайымы кең, білімді және мәдениетті.', synonyms: 'Синонимдері: ақылды, саналы, зерделі', example: 'Парасатты адам кез келген пікірталаста қарсыласын құрметтей біледі.' },
-        { word: 'Жүйелілік', stem: 'жүйелі', meaning: 'Ой мен әрекеттің белгілі бір тәртіппен, логикалық бірізділікпен құрылуы.', synonyms: 'Синонимдері: реттілік, бірізділік, тәртіп', example: 'Сөйлеудегі жүйелілік тыңдарманның назарын соңына дейін ұстап тұрады.' },
-        { word: 'Алғырлық', stem: 'алғыр', meaning: 'Ойды тез қабылдап, жылдам әрі тапқыр шешім таба білу қабілеті.', synonyms: 'Синонимдері: зеректік, тапқырлық, ұшқырлық', example: 'Дебат барысында алғырлық танытқан команда жоғары ұпай жинады.' }
+        { word: 'Байыпты', stem: 'байыпты', meaning: 'Салмақты, сабырлы.', synonyms: 'Синонимдері: салиқалы', example: 'Ол сұраққа байыпты жауап берді.' }
       ]
     };
     let wordIdx = 0;
@@ -2338,7 +2124,7 @@
       $('#wordSynonyms').textContent = item.synonyms || '';
       $('#wordInitial').textContent = item.word.charAt(0).toUpperCase();
       $('#wordExample').textContent = item.example;
-      $('#wordTask').textContent = lang === 'kk' ? `«${item.word}» сөзін қолданып сөйлем құра.` : `Составь предложение со словом «${item.word}».`;
+      $('#wordTask').textContent = lang === 'kk' ? `«${item.word}» сөзін дәйекті сөйлемде қолдан.` : `Составь аргументированное предложение со словом «${item.word}».`;
       $('#wordInput').value = '';
       $('#wordFeedback').classList.add('hidden');
     }
@@ -2353,35 +2139,22 @@
       const analysis = analyzeSpeechText(val, state.lang);
       $('#wordFeedback').classList.remove('hidden');
       $('#wordFeedback').innerHTML = `
-        <h3>${hasWord ? (isKz ? 'Сәтті тексерілді!' : 'Предложение проверено!') : (isKz ? 'Сөзді сөйлемге қосып көріңіз' : 'Попробуй включить слово дня в фразу')}</h3>
-        <p class="muted">${hasWord ? (isKz ? `«${item.word}» сөзі орынды қолданылды. Балл: ${analysis.textScore}/100` : `Слово «${item.word}» использовано в контексте. Балл: ${analysis.textScore}/100`) : (isKz ? `Сөйлемде «${item.word}» сөзі кездеспеді.` : `В предложении пока нет слова «${item.word}».`)}</p>
+        <h3>${hasWord ? (isKz ? 'Қатаң тексерілді!' : 'Проверено строго!') : (isKz ? 'Сөзді қосыңыз' : 'Добавьте слово дня')}</h3>
+        <p class="muted">${hasWord ? (isKz ? `Балл: ${analysis.textScore}/100` : `Балл: ${analysis.textScore}/100`) : (isKz ? `Сөйлемде «${item.word}» жоқ.` : `В предложении нет слова.`)}</p>
       `;
       recordStudentSession(isKz ? 'Күн сөзі' : 'Слово дня', $('#wordTitle').textContent, val, analysis);
     });
 
-    // ===================== 10. EXPLAIN IN OWN WORDS (5 СЛОВ НА RU И 5 СЛОВ НА KZ) =====================
+    // ===================== 10. EXPLAIN IN OWN WORDS =====================
     const EXPLAIN_TOPICS = {
-      ru: [
-        'Эмпатия',
-        'Критическое мышление',
-        'Прокрастинация',
-        'Цифровой след',
-        'Эмоциональный интеллект'
-      ],
-      kk: [
-        'Эмпатия',
-        'Сыни ойлау',
-        'Прокрастинация',
-        'Цифрлық із',
-        'Эмоционалды интеллект'
-      ]
+      ru: ['Эмпатия', 'Критическое мышление', 'Прокрастинация'],
+      kk: ['Эмпатия', 'Сыни ойлау', 'Прокрастинация']
     };
     let explainIdx = 0;
     function renderExplainTopic(advance = true) {
       const list = EXPLAIN_TOPICS[state.lang] || EXPLAIN_TOPICS.ru;
       if (advance) explainIdx = (explainIdx + 1) % list.length;
-      const idx = explainIdx % list.length;
-      $('#explainTitle').textContent = list[idx];
+      $('#explainTitle').textContent = list[explainIdx % list.length];
       $('#explainInput').value = '';
       $('#explainFeedback').classList.add('hidden');
     }
@@ -2392,111 +2165,26 @@
       if (!val) { toast(isKz ? 'Мәтін енгізіңіз' : 'Введите объяснение'); return; }
       const analysis = analyzeSpeechText(val, state.lang);
       $('#explainFeedback').classList.remove('hidden');
-      $('#explainFeedback').innerHTML = `<h3>${isKz ? 'Талдау жасалды' : 'Анализ завершен'}</h3><p class="muted">${isKz ? `Ұғым түсінікті жеткізілді. Балл: ${analysis.textScore}/100` : `Понятие раскрыто своими словами. Балл: ${analysis.textScore}/100`}</p>`;
+      $('#explainFeedback').innerHTML = `<h3>${isKz ? 'Талдау жасалды' : 'Анализ завершен'}</h3><p class="muted">${isKz ? `Бағасы: ${analysis.textScore}/100` : `Оценка: ${analysis.textScore}/100`}</p>`;
       recordStudentSession(isKz ? 'Өз сөзіңмен түсіндір' : 'Объясни своими словами', $('#explainTitle').textContent, val, analysis);
     });
 
-    // ===================== 11. SPEECH EXERCISES (3 RU + 3 KZ СКОРОГОВОРКИ + ЧЁТКОСТЬ, ИНТОНАЦИЯ, ТЕМП И ПАУЗЫ) =====================
+    // ===================== 11. SPEECH EXERCISES =====================
     const SPEECH_EXERCISES = [
-      // Скороговорки RU (3)
       {
         cat: 'twisters_ru',
         icon: '👅',
-        title: { ru: 'Скороговорка 1: Чёткие согласные', kk: 'Жаңылтпаш (RU) 1: Анық дауыссыздар' },
-        desc: { ru: 'Произнеси сначала медленно по слогам, затем ускорь темп без потери чёткости.', kk: 'Алдымен баяу, содан кейін анықтығын жоғалтпай жылдам айтыңыз.' },
+        title: { ru: 'Скороговорка 1', kk: 'Жаңылтпаш 1' },
+        desc: { ru: 'Чётко проговаривай каждый звук.', kk: 'Әр дыбысты анық айтыңыз.' },
         text: 'Карл у Клары украл кораллы, а Клара у Карла украла кларнет.',
         lang: 'ru-RU'
       },
       {
-        cat: 'twisters_ru',
-        icon: '👅',
-        title: { ru: 'Скороговорка 2: Звуки «Ш» и «С»', kk: 'Жаңылтпаш (RU) 2: «Ш» және «С» дыбыстары' },
-        desc: { ru: 'Следи за разницей шипящих и свистящих звуков, не глотай окончания.', kk: 'Ызың және ысқырық дыбыстарды шатастырмай анық айтыңыз.' },
-        text: 'Шла Саша по шоссе и сосала сушку.',
-        lang: 'ru-RU'
-      },
-      {
-        cat: 'twisters_ru',
-        icon: '👅',
-        title: { ru: 'Скороговорка 3: Звук «Р» и ритм', kk: 'Жаңылтпаш (RU) 3: «Р» дыбысы және ырғақ' },
-        desc: { ru: 'Чётко проговаривай каждую «Р» в сочетании с твёрдыми согласными.', kk: 'Әрбір «Р» дыбысын анық әрі ырғақты дыбыстаңыз.' },
-        text: 'На дворе трава, на траве дрова, не руби дрова на траве двора.',
-        lang: 'ru-RU'
-      },
-      // Жаңылтпаштар KZ (3)
-      {
         cat: 'twisters_kk',
         icon: '🇰🇿',
-        title: { ru: 'Жаңылтпаш 1 (KZ): «Қ» және «Ғ» дыбыстары', kk: 'Жаңылтпаш 1: «Қ» және «Ғ» дыбыстары' },
-        desc: { ru: 'Твердые гортанные звуки казахского языка произноси чётко.', kk: 'Қазақ тіліне тән «Қ» және «Ғ» дыбыстарын анық айтып жаттық.' },
+        title: { ru: 'Жаңылтпаш (KZ)', kk: 'Жаңылтпаш (KZ)' },
+        desc: { ru: 'Твердые звуки казахского языка.', kk: 'Қазақ тіліне тән дыбыстар.' },
         text: 'Ақ тайлақ ақ па, қара тайлақ ақ па?',
-        lang: 'kk-KZ'
-      },
-      {
-        cat: 'twisters_kk',
-        icon: '🇰🇿',
-        title: { ru: 'Жаңылтпаш 2 (KZ): Артикуляция и темп', kk: 'Жаңылтпаш 2: Артикуляция және қарқын' },
-        desc: { ru: 'Проговори фразу на одном дыхании без запинок.', kk: 'Сөйлемді мүдірмей, бір деммен анық айтып шық.' },
-        text: 'Шеше, неше кесе сынды кеше?',
-        lang: 'kk-KZ'
-      },
-      {
-        cat: 'twisters_kk',
-        icon: '🇰🇿',
-        title: { ru: 'Жаңылтпаш 3 (KZ): Дикция және екпін', kk: 'Жаңылтпаш 3: Дикция және екпін' },
-        desc: { ru: 'Чётко выделяй звонкие и глухие согласные.', kk: 'Қатаң және ұяң дауыссыз дыбыстарды анық ажыратып айт.' },
-        text: 'Төрт түйе түгел түстелді ме?',
-        lang: 'kk-KZ'
-      },
-      // Чёткость (2)
-      {
-        cat: 'clarity',
-        icon: '🎯',
-        title: { ru: 'Чёткость 1: Артикуляция сложных сочетаний', kk: 'Анықтық 1: Күрделі дыбыс тіркестері' },
-        desc: { ru: 'Активно работай губами и языком, проговаривая каждое слово до конца.', kk: 'Ерін мен тілді белсенді қимылдатып, әр сөздің соңын анық айт.' },
-        text: 'В четверг четвёртого числа в четыре с четвертью часа регулировщик регулировал на Лиговке.',
-        lang: 'ru-RU'
-      },
-      {
-        cat: 'clarity',
-        icon: '🎯',
-        title: { ru: 'Чёткость 2: Анық сөйлеу (KZ)', kk: 'Анықтық 2: Буындарды анық дыбыстау' },
-        desc: { ru: 'Произнеси фразу разборчиво, уделяя внимание каждому слогу.', kk: 'Әр буынды жұтпай, тыңдаушыға анық жеткізіп оқы.' },
-        text: 'Білімді жастар — еліміздің болашағы мен тірегі.',
-        lang: 'kk-KZ'
-      },
-      // Интонация (2)
-      {
-        cat: 'intonation',
-        icon: '🎭',
-        title: { ru: 'Интонация 1: Логическое ударение', kk: 'Интонация 1: Логикалық екпін' },
-        desc: { ru: 'Выдели голосом ключевые слова «главное», «уверенность» и «результат».', kk: 'Дауыс ырғағымен «бастысы», «сенімділік» және «нәтиже» сөздерін ерекшеле.' },
-        text: 'В публичном выступлении главное — не громкость голоса, а уверенность и ясный результат.',
-        lang: 'ru-RU'
-      },
-      {
-        cat: 'intonation',
-        icon: '🎭',
-        title: { ru: 'Интонация 2: Вопрос и утверждение (KZ)', kk: 'Интонация 2: Сұрақ және сенімді тұжырым' },
-        desc: { ru: 'В первой части подними тон вопроса, во второй — уверенно заверши мысль.', kk: 'Бірінші бөлігін сұраулы ырғақпен көтеріп, екінші бөлігін сенімді аяқта.' },
-        text: 'Біз жетістікке қалай жетеміз? Тек күнделікті еңбек пен табандылық арқылы!',
-        lang: 'kk-KZ'
-      },
-      // Темп и паузы (2)
-      {
-        cat: 'pace',
-        icon: '⏱️',
-        title: { ru: 'Темп и паузы 1: Смысловые остановки', kk: 'Қарқын және кідіріс 1: Мағыналық кідірістер' },
-        desc: { ru: 'На знаке «/» делай паузу в 1–2 секунды, удерживая внимание слушателей.', kk: '«/» белгісі тұрған жерде 1–2 секунд кідіріс жасап, тыңдаушы назарын ұста.' },
-        text: 'Слово имеет силу / только тогда, / когда за ним стоит ясная мысль / и спокойная пауза.',
-        lang: 'ru-RU'
-      },
-      {
-        cat: 'pace',
-        icon: '⏱️',
-        title: { ru: 'Темп и паузы 2: Бірқалыпты қарқын (KZ)', kk: 'Қарқын және кідіріс 2: Бірқалыпты сөйлеу' },
-        desc: { ru: 'Не торопись в начале фразы, соблюдай паузы на знаках «/».', kk: 'Сөйлем басында асықпай, «/» белгілерінде кідіріс жаса.' },
-        text: 'Асықпай сөйлеу — / ойдың тереңдігін көрсетеді, / ал орынды кідіріс / сөзге салмақ береді.',
         lang: 'kk-KZ'
       }
     ];
@@ -2512,15 +2200,15 @@
               <div class="exercise-icon">${ex.icon}</div>
               <div>
                 <h3>${ex.title[state.lang] || ex.title.ru}</h3>
-                ${ex.desc ? `<p>${ex.desc[state.lang] || ex.desc.ru}</p>` : ''}
+                <p>${ex.desc[state.lang] || ex.desc.ru}</p>
               </div>
             </div>
             <div class="exercise-sample">«${ex.text}»</div>
           </div>
           <div>
             <div class="exercise-controls">
-              <button class="secondary" style="flex:1" onclick="speakSample('${ex.text.replace(/\//g, '')}', '${ex.lang}')">🔊 ${isKz ? 'Үлгіні тыңдау' : 'Послушать'}</button>
-              <button class="primary" style="flex:2" onclick="checkEx(${idx}, '${ex.text.replace(/\//g, '')}', '${ex.lang}')">🎙 ${isKz ? 'Айту және тексеру' : 'Произнести и проверить'}</button>
+              <button class="secondary" style="flex:1" onclick="speakSample('${ex.text}', '${ex.lang}')">🔊 ${isKz ? 'Тыңдау' : 'Послушать'}</button>
+              <button class="primary" style="flex:2" onclick="checkEx(${idx}, '${ex.text}', '${ex.lang}')">🎙 ${isKz ? 'Тексеру' : 'Проверить'}</button>
             </div>
             <div id="exRes-${idx}" style="font-size:13px;margin-top:8px"></div>
           </div>
@@ -2529,31 +2217,23 @@
     }
 
     window.speakSample = function(text, lang) {
-      if (!('speechSynthesis' in window)) {
-        toast(state.lang === 'kk' ? 'Дыбыстау қолжетімсіз' : 'Озвучка недоступна в этом браузере');
-        return;
-      }
+      if (!('speechSynthesis' in window)) return;
       window.speechSynthesis.cancel();
       const u = new SpeechSynthesisUtterance(text);
       u.lang = lang;
-      u.rate = 0.92;
       window.speechSynthesis.speak(u);
     };
 
     window.checkEx = function(idx, targetText, lang) {
       const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
-      const isKz = state.lang === 'kk';
-      if (!SpeechRec) { toast('Speech-to-Text недоступен'); return; }
+      if (!SpeechRec) return;
       const r = new SpeechRec();
       r.lang = lang;
       const out = $(`#exRes-${idx}`);
-      if (out) out.textContent = isKz ? 'Тыңдалып жатыр...' : 'Слушаю вас...';
+      if (out) out.textContent = 'Слушаю...';
       r.onresult = e => {
         const spoken = e.results[0][0].transcript;
-        if (out) out.innerHTML = `<b>${isKz ? 'Танылды' : 'Распознано'}:</b> «${spoken}» ✓`;
-      };
-      r.onerror = () => {
-        if (out) out.textContent = isKz ? 'Микрофон қатесі. Қайта байқап көріңіз.' : 'Ошибка микрофона. Попробуйте ещё раз.';
+        if (out) out.innerHTML = `<b>Распознано:</b> «${spoken}» ✓`;
       };
       r.start();
     };
@@ -2567,11 +2247,11 @@
       });
     });
 
-    // ===================== 12. VIDEO LESSONS (PERSISTENT URL + COVER) =====================
+    // ===================== 12. VIDEO LESSONS (ТРИ ВАШИХ ССЫЛКИ ПО ПОРЯДКУ) =====================
     const VIDEO_LESSONS_META = [
-      { tag: { ru: 'Урок 1', kk: '1-сабақ' }, title: { ru: 'Как говорить чётко и разборчиво', kk: 'Қалай анық сөйлеу керек' } },
-      { tag: { ru: 'Урок 2', kk: '2-сабақ' }, title: { ru: 'Интонация и выразительность', kk: 'Интонация және мәнерлілік' } },
-      { tag: { ru: 'Урок 3', kk: '3-сабақ' }, title: { ru: 'Темп речи и паузы', kk: 'Сөйлеу қарқыны мен кідірістер' } }
+      { tag: { ru: 'Видео 1', kk: '1-бейне' }, title: { ru: 'Видеоурок 1', kk: 'Бейнесабақ 1' }, url: 'https://youtu.be/hNjXVKk2qtY?si=bbAmHfID0dUj1aZR' },
+      { tag: { ru: 'Видео 2', kk: '2-бейне' }, title: { ru: 'Видеоурок 2', kk: 'Бейнесабақ 2' }, url: 'https://youtu.be/C01VsHt_M0M?si=cZoX_PU61q0abVRj' },
+      { tag: { ru: 'Видео 3', kk: '3-бейне' }, title: { ru: 'Видеоурок 3', kk: 'Бейнесабақ 3' }, url: 'https://youtu.be/_ZL-1lWuZG4?si=lqAZWhe7uWUCBeQQ' }
     ];
 
     function convertToEmbed(url) {
@@ -2584,20 +2264,16 @@
     function renderVideoLessons() {
       const isKz = state.lang === 'kk';
       $('#videoLessonsGrid').innerHTML = VIDEO_LESSONS_META.map((item, idx) => {
-        const v = state.videos[idx] || { url: '', cover: '' };
+        const embedUrl = convertToEmbed(item.url);
         return `
           <article class="card video-card">
-            <div class="video-media-box" id="vidBox-${idx}">
-              ${v.cover && !v.playing ? `<img src="${v.cover}" alt="Cover"><div class="play-overlay" onclick="playVideo(${idx})"><div class="play-circle">▶</div></div>` : (v.url ? `<iframe src="${convertToEmbed(v.url)}?autoplay=1" allowfullscreen></iframe>` : `<span style="font-size:13px">${isKz ? 'Бейне сілтемесін енгізіңіз' : 'Вставьте ссылку на видео'}</span>`)}
+            <div class="video-media-box">
+              <iframe src="${embedUrl}" allowfullscreen></iframe>
             </div>
             <div class="video-body">
               <div>
                 <span class="tag">${item.tag[state.lang] || item.tag.ru}</span>
                 <h3 style="margin:10px 0 8px">${item.title[state.lang] || item.title.ru}</h3>
-              </div>
-              <div class="media-config-box">
-                <input type="text" id="vidUrl-${idx}" value="${v.url || ''}" placeholder="${isKz ? 'YouTube сілтемесі' : 'Ссылка на видео (YouTube)'}" onchange="saveVideoMedia(${idx})">
-                <input type="text" id="vidCover-${idx}" value="${v.cover || ''}" placeholder="${isKz ? 'Мұқаба сурет сілтемесі' : 'Ссылка на картинку-обложку'}" onchange="saveVideoMedia(${idx})">
               </div>
             </div>
           </article>
@@ -2605,23 +2281,10 @@
       }).join('');
     }
 
-    window.playVideo = function(idx) {
-      state.videos[idx].playing = true;
-      renderVideoLessons();
-    };
-
-    window.saveVideoMedia = function(idx) {
-      state.videos[idx].url = $(`#vidUrl-${idx}`).value.trim();
-      state.videos[idx].cover = $(`#vidCover-${idx}`).value.trim();
-      state.videos[idx].playing = false;
-      saveState();
-      toast(state.lang === 'kk' ? 'Бейне мен мұқаба сақталды ✓' : 'Видео и обложка сохранены ✓');
-    };
-
-    // ===================== 13. AI CHAT (WITH SPEECH-TO-TEXT) =====================
+    // ===================== 13. AI CHAT =====================
     function updateChatLangNotice() {
       const sub = $('#chatSubHeader');
-      if (sub) sub.textContent = state.lang === 'kk' ? 'Қазақ тіліндегі диалог (Speech-to-Text)' : 'Диалог на русском языке (Speech-to-Text)';
+      if (sub) sub.textContent = state.lang === 'kk' ? 'Қатаң AI-талдауы бар диалог' : 'Диалог со строгим AI-анализом';
     }
 
     let chatHistory = [];
@@ -2629,7 +2292,7 @@
       const box = $('#chatMessages');
       if (!force && box.children.length > 0) return;
       chatHistory = [];
-      const greeting = state.lang === 'kk' ? 'Сәлем! Мен SpeechMate AI-жаттықтырушымын. Бүгін не туралы сөйлескің келеді?' : 'Привет! Я SpeechMate Coach. Нажми на микрофон или напиши сообщение — обсудим любую тему для развития речи!';
+      const greeting = state.lang === 'kk' ? 'Сәлем! Мен SpeechMate Coach. Әр сөзіңізді фактілер бойынша қатаң бағалаймын.' : 'Привет! Я SpeechMate Coach. Оцениваю каждую реплику строго и объективно по фактам!';
       chatHistory.push({ role: 'ai', text: greeting });
       box.innerHTML = `<div class="bubble ai">${greeting}</div>`;
     }
@@ -2646,7 +2309,7 @@
       box.scrollTop = box.scrollHeight;
 
       setTimeout(() => {
-        const reply = state.lang === 'kk' ? `Керемет пікір! Оны толықтырып, нақты мысал келтіре аласың ба?` : `Интересная мысль! Постарайся привести пример из жизни, чтобы аргумент звучал убедительнее.`;
+        const reply = state.lang === 'kk' ? `Талдау: Ойдың мазмұны жеткілікті, бірақ нақты фактілермен толықтыру қажет.` : `Анализ: Мысль понятна, но требует более глубокой фактической аргументации.`;
         chatHistory.push({ role: 'ai', text: reply });
         box.insertAdjacentHTML('beforeend', `<div class="bubble ai">${reply}</div>`);
         box.scrollTop = box.scrollHeight;
@@ -2686,13 +2349,13 @@
           <div style="background:#f0fdf4;padding:18px;border-radius:16px;border:1px solid #bbf7d0">
             <span class="section-kicker" style="color:var(--green)">ПОСЛЕ ТРЕНИРОВОК</span>
             <strong style="font-size:32px;display:block;margin:6px 0;color:#15803d">${state.currentScore || 78}%</strong>
-            <p class="muted" style="margin:0;font-size:13px">Связанные развёрнутые ответы, уверенная структура.</p>
+            <p class="muted" style="margin:0;font-size:13px">Связанные развёрнутые ответы, строгая аргументация.</p>
           </div>
         </div>
       `;
 
-      $('#improvedSkillsBox').innerHTML = isKz ? '• Ойдың құрылымы мен жүйелілігі (+24%)<br>• Паразит сөздердің азаюы' : '• Структура и связность ответов (+24%)<br>• Снижение частоты слов-паразитов';
-      $('#frequentErrorsBox').innerHTML = isKz ? 'Қайталанатын қателер жоқ ✓' : 'Повторяющихся ошибок не выявлено ✓';
+      $('#improvedSkillsBox').innerHTML = isKz ? '• Фактілерге негізделген дәлелдеу<br>• Паразит сөздерді азайту' : '• Фактическая аргументация<br>• Минимизация слов-паразитов';
+      $('#frequentErrorsBox').innerHTML = isKz ? 'Бақылаудағы аймақтар' : 'Зоны контроля';
 
       $('#history').innerHTML = sessions.length === 0 ? `<p class="muted">История пуста</p>` : sessions.map(s => `
         <div class="history-item">
@@ -2702,10 +2365,10 @@
       `).join('');
     }
 
-    // ===================== 15. PHOTOS IN HISTORY (PERSISTENT URL) =====================
+    // ===================== 15. PHOTOS IN HISTORY =====================
     const PHOTO_SLOTS_META = [
       { title: { ru: 'Фото 1: Работа над исследованием', kk: '1-фото: Зерттеу жұмысы' } },
-      { title: { ru: 'Фото 2: Создание прототипа', kk: '2-фото: Прототип жасау' } }
+      { title: { ru: 'Фото 2: Создание проекта', kk: '2-фото: Жобаны жасау' } }
     ];
 
     function renderPhotoSlots() {
@@ -2715,23 +2378,13 @@
         return `
           <div class="card photo-card">
             <div class="photo-preview">
-              ${ph.url ? `<img src="${ph.url}" alt="Photo">` : `<span style="font-size:26px">📷</span><strong>${item.title[state.lang] || item.title.ru}</strong>`}
+              <img src="${ph.url}" alt="Team Photo">
             </div>
-            <div style="display:grid;gap:8px">
-              <strong style="font-size:14px">${item.title[state.lang] || item.title.ru}</strong>
-              <input type="text" id="photoUrl-${idx}" value="${ph.url || ''}" placeholder="${isKz ? 'Суретке сілтеме қойыңыз' : 'Вставьте ссылку на фото'}" onchange="savePhotoUrl(${idx})">
-            </div>
+            <strong style="font-size:14px">${item.title[state.lang] || item.title.ru}</strong>
           </div>
         `;
       }).join('');
     }
-
-    window.savePhotoUrl = function(idx) {
-      state.photos[idx].url = $(`#photoUrl-${idx}`).value.trim();
-      saveState();
-      renderPhotoSlots();
-      toast(state.lang === 'kk' ? 'Фото сілтемесі сақталды ✓' : 'Ссылка на фото сохранена ✓');
-    };
 
     // ===================== 16. INIT =====================
     (function init() {
